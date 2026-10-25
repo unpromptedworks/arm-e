@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposition I. The pile of days — Unrolled</title>
+<meta name="description" content="One grain of sand for every day since 1 January 1970, dropped on one square and toppled to rest. The pile on any day is the same for everyone.">
+<meta property="og:title" content="Proposition I. The pile of days">
+<meta property="og:description" content="One grain of sand for every day since 1 January 1970. The pile on any day is the same for everyone.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Proposition I</p>
+<h1>The pile of days</h1>
+<p class="enunciation">To lay one grain of sand on a single square for every day since the first of January 1970, and to show that the pile it makes on any given day is one pile, the same for everyone who looks.</p>
+
+<form class="given" id="given">
+  <label for="day">Given the day</label>
+  <input type="date" id="day" min="1970-01-01">
+  <button type="button" id="prev" aria-label="The day before">&larr;</button>
+  <button type="button" id="next" aria-label="The day after">&rarr;</button>
+</form>
+
+<figure>
+  <canvas id="figure" width="1" height="1" role="img" aria-label="A square sandpile of nested diamond patterns, shaded by the number of grains on each square."></canvas>
+  <figcaption id="caption">Fig. 1.</figcaption>
+</figure>
+<div class="key" aria-hidden="true">
+  <span style="--sw: var(--ground)">no grain</span>
+  <span style="--sw: var(--g1)">one</span>
+  <span style="--sw: var(--g2)">two</span>
+  <span style="--sw: var(--g3)">three</span>
+  <span style="--sw: var(--mark)">toppled that day</span>
+</div>
+
+<h2>Construction</h2>
+<p>Let a grid of squares be ruled, and let every grain fall on the middle square. Whenever a square holds four grains or more, let it give one grain to each of its four neighbours, and let this go on until no square holds four. Each such giving is a <i>toppling</i>, and the topplings one new grain sets going are its <i>avalanche</i>. This is the sandpile of Bak, Tang and Wiesenfeld.<sup><a href="#n1">1</a></sup></p>
+<p>Let the grains be counted by the calendar: one for the first of January 1970, and one more for each day after it, reckoned in Greenwich time. The figure shows the pile at rest once the day&rsquo;s grain has fallen, with the squares that grain toppled marked in blue.</p>
+
+<h2>Demonstration</h2>
+<p>It might be supposed that the shape depends on which overfull square is toppled first, so that two machines toppling in different orders would draw two piles. They do not. Dhar proved that topplings commute: any order of toppling ends in the same pile at rest.<sup><a href="#n2">2</a></sup> The page topples in whatever order is quickest and arrives where every other order arrives.</p>
+<p>And the number of grains is fixed by the date alone. So nowhere in the construction is anything left to choose, and nothing is drawn by lot.</p>
+<p class="therefore">Therefore whoever opens this page on the same day, wherever they are, sees this pile, square for square; and tomorrow&rsquo;s pile is this one with one grain more.</p>
+<p class="qed">Which was to be shown.</p>
+
+<h2>Corollaries</h2>
+<p>The middle square holds no grain, then one, two, three, and on the fourth grain it topples and is left with none. So on three days in four the day&rsquo;s grain topples nothing and the pile does not visibly change, and every fourth day there is an avalanche. Since 1970 they have ranged from a single square to the 8,817 squares toppled on <a href="?d=2025-02-12">12 February 2025</a>, the largest so far.<sup><a href="#n3">3</a></sup></p>
+
+<section class="notes">
+<h2>Notes</h2>
+<p id="n1">1. Per Bak, Chao Tang and Kurt Wiesenfeld, &ldquo;Self-organized criticality: An explanation of 1/<i>f</i> noise,&rdquo; <i>Physical Review Letters</i> 59 (1987), 381&ndash;384. See also <a href="https://en.wikipedia.org/wiki/Abelian_sandpile_model">&ldquo;Abelian sandpile model,&rdquo; Wikipedia</a>.</p>
+<p id="n2">2. Deepak Dhar, &ldquo;Self-organized critical state of sandpile automaton models,&rdquo; <i>Physical Review Letters</i> 64 (1990), 1613&ndash;1616.</p>
+<p id="n3">3. Counted by this page&rsquo;s own rule, dropping the grains one at a time from 1 January 1970 to 25 October 2026.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="pile.js"></script>
+</body>
+</html>

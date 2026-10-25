@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposition II. The ant of a word — Unrolled</title>
+<meta name="description" content="Any word, read as the rule of an ant on a grid: vowels turn it left, consonants right. The same word draws the same figure for everyone.">
+<meta property="og:title" content="Proposition II. The ant of a word">
+<meta property="og:description" content="Any word, read as the rule of an ant on a grid. The same word draws the same figure for everyone.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Proposition II</p>
+<h1>The ant of a word</h1>
+<p class="enunciation">Given any word, to make of its letters the rule of an ant upon a grid, and to show that the word alone decides the figure the ant draws.</p>
+
+<form class="given" id="given">
+  <label for="word">Given the word</label>
+  <input type="text" id="word" maxlength="24" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <button type="submit">Draw</button>
+</form>
+
+<figure>
+  <canvas id="figure" width="600" height="600" role="img" aria-label="The trail of an ant on a square grid, shaded by colour state."></canvas>
+  <figcaption id="caption">Fig. 1.</figcaption>
+</figure>
+<div class="key" id="key" aria-hidden="true"></div>
+
+<h2>Construction</h2>
+<p>Let the word be stripped to its letters, at most twelve, and let each letter stand for one shade, from the bare ground for the first letter to full ink for the last. Let every square of a grid 257 squares on a side begin in the first shade, and let an ant stand on the middle square facing up.</p>
+<p>At each step the ant reads the shade of its square. If that shade&rsquo;s letter is a vowel, it turns a quarter left; if a consonant, a quarter right. It then moves the square on to the next shade, the last shade returning to the first, and steps forward one square. The grid is closed on itself, so an ant that walks off one edge comes back on the opposite one. Let it take 400,000 steps. The figure shows the smallest square of grid that holds everything the ant has reached so far.</p>
+<p>With the word <i>la</i>, a consonant and then a vowel, this is Langton&rsquo;s ant;<sup><a href="#n1">1</a></sup> longer words give the many-coloured ants of Turk and Propp.<sup><a href="#n2">2</a></sup></p>
+
+<h2>Demonstration</h2>
+<p>The word fixes the number of shades and the turn for each. The ant&rsquo;s first square, first heading and the blank grid are the same for every word. Each step depends only on the step before it. So there is one walk for each word, and nothing in it is drawn by lot.</p>
+<p class="therefore">Therefore whoever gives the same word sees the same figure, step for step; and two words with the same pattern of vowels and consonants, as <i>cat</i> and <i>dog</i>, draw the same figure, differing only in name.</p>
+<p class="qed">Which was to be shown.</p>
+
+<h2>Corollaries</h2>
+<p>Exchange every vowel for a consonant and every consonant for a vowel, and every left turn becomes a right: the ant walks the same walk reflected left for right. So <a href="?w=aunt"><i>aunt</i></a> draws <a href="?w=tree"><i>tree</i></a> reflected.</p>
+<p>A word with no vowel turns right at every step and walks forever round one small square. Many words wander in a blot; some, after long wandering, settle into a straight road out, which on this closed grid comes back round and crosses its own trail. Even for Langton&rsquo;s own ant, no one has proved that every start ends on the road.<sup><a href="#n1">1</a></sup> No shortcut is known for telling which word does which: the figure has to be drawn to be known, though it can only be drawn one way.</p>
+
+<section class="notes">
+<h2>Notes</h2>
+<p id="n1">1. Christopher Langton, &ldquo;Studying artificial life with cellular automata,&rdquo; <i>Physica D</i> 22 (1986), 120&ndash;149. See <a href="https://en.wikipedia.org/wiki/Langton%27s_ant">&ldquo;Langton&rsquo;s ant,&rdquo; Wikipedia</a>.</p>
+<p id="n2">2. The extension to many colours, each with its own turn, is credited to Greg Turk and Jim Propp in the same Wikipedia article.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="ant.js"></script>
+</body>
+</html>
