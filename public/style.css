@@ -1,0 +1,101 @@
+@font-face { font-family: "Old Standard"; src: url("/fonts/old-standard-tt-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Old Standard"; src: url("/fonts/old-standard-tt-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Old Standard"; src: url("/fonts/old-standard-tt-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+  --ground: #ffffff;
+  --ink: #111111;
+  --quiet: #5c5c5c;
+  --rule: #111111;
+  --mark: #1f47a8;
+  --g1: #e3e3e3;
+  --g2: #a6a6a6;
+  --g3: #3a3a3a;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #0d0d0d;
+    --ink: #ececec;
+    --quiet: #a3a3a3;
+    --rule: #ececec;
+    --mark: #7f9cf0;
+    --g1: #2c2c2c;
+    --g2: #6e6e6e;
+    --g3: #d8d8d8;
+  }
+}
+
+* { box-sizing: border-box; }
+html { background: var(--ground); }
+body {
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 3rem 1rem 4rem;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "Old Standard", "Times New Roman", serif;
+  font-size: 1.1875rem;
+  line-height: 1.55;
+  font-variant-numeric: oldstyle-nums;
+}
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: var(--mark); }
+
+header.top { text-align: center; margin-bottom: 2.5rem; }
+header.top .name { font-size: 0.95rem; letter-spacing: 0.32em; text-transform: uppercase; text-decoration: none; }
+header.top .name:hover { color: inherit; }
+header.top::after { content: ""; display: block; margin: 0.9rem auto 0; width: 100%; border-top: 3px double var(--rule); }
+
+h1 { font-weight: 400; font-size: 1.9rem; line-height: 1.2; text-align: center; margin: 0 0 0.35rem; }
+.prop-no { text-align: center; font-size: 0.95rem; letter-spacing: 0.32em; text-transform: uppercase; margin: 0 0 1.6rem; }
+.enunciation { font-style: italic; text-align: center; margin: 0 auto 2rem; max-width: 33rem; }
+h2 { font-weight: 400; font-size: 0.95rem; letter-spacing: 0.24em; text-transform: uppercase; margin: 2.4rem 0 0.6rem; }
+p { margin: 0 0 1rem; hyphens: auto; }
+.therefore { margin-top: 1.6rem; }
+.qed { text-align: right; font-style: italic; }
+
+figure { margin: 0 auto 1.4rem; max-width: 34rem; }
+figure canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background: var(--ground);
+}
+figcaption { text-align: center; font-size: 0.95rem; color: var(--quiet); margin-top: 0.6rem; }
+figcaption b { font-weight: 400; font-style: normal; color: var(--ink); letter-spacing: 0.08em; }
+
+.given { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; justify-content: center; align-items: baseline; margin: 0 0 1.4rem; font-size: 1rem; }
+.given label { font-style: italic; }
+.given input {
+  font: inherit;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  padding: 0.1rem 0.2rem;
+  border-radius: 0;
+  min-width: 0;
+}
+.given input[type="text"] { width: 12ch; text-align: center; letter-spacing: 0.06em; }
+.given button {
+  font: inherit; font-size: 0.95rem; color: var(--ink); background: transparent;
+  border: 1px solid var(--rule); border-radius: 0; padding: 0.15rem 0.7rem; cursor: pointer;
+}
+.given button:hover { color: var(--mark); border-color: var(--mark); }
+
+.key { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem 1.1rem; font-size: 0.95rem; color: var(--quiet); margin: -0.6rem 0 1.4rem; }
+.key span::before { content: ""; display: inline-block; width: 0.8em; height: 0.8em; margin-right: 0.35em; vertical-align: -0.05em; border: 1px solid var(--rule); background: var(--sw); }
+
+ol.contents { list-style: none; padding: 0; margin: 0; }
+ol.contents li { display: grid; grid-template-columns: 3.2rem 1fr; gap: 0 0.6rem; padding: 0.9rem 0; border-top: 1px solid var(--rule); }
+ol.contents li:last-child { border-bottom: 1px solid var(--rule); }
+ol.contents .n { letter-spacing: 0.12em; }
+ol.contents .t { display: block; }
+ol.contents .e { display: block; font-style: italic; color: var(--quiet); font-size: 1rem; }
+
+.notes { font-size: 1rem; color: var(--quiet); }
+.notes p { margin-bottom: 0.6rem; }
+footer { margin-top: 3.5rem; padding-top: 0.8rem; border-top: 3px double var(--rule); font-size: 0.95rem; color: var(--quiet); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; }
