@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposition III. The square of the minute — Unrolled</title>
+<meta name="description" content="The minute on the clock, squared and cut to its middle four figures, again and again: von Neumann's first machine for chance, drawn as a dial of the day's minutes and how long each takes to repeat.">
+<meta property="og:title" content="Proposition III. The square of the minute">
+<meta property="og:description" content="The minute on the clock, run through von Neumann's middle-square rule until it repeats, as it must.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Proposition III</p>
+<h1>The square of the minute</h1>
+<p class="enunciation">Given the minute on the clock, to draw from it a run of figures by the rule von Neumann used to make chance by arithmetic, and to show that the run, however lawless it looks, must come back on itself.</p>
+
+<form class="given" id="given">
+  <label for="minute">Given the minute</label>
+  <input type="text" id="minute" maxlength="5" inputmode="numeric" autocomplete="off" spellcheck="false">
+  <button type="submit">Draw</button>
+</form>
+
+<figure>
+  <canvas id="dial" width="1000" height="1000" role="img" aria-label="A dial of the day's 1,440 minutes, midnight at the top: one spoke for each minute, as long as that minute's run lasts before it repeats; spokes that end in nought are grey."></canvas>
+  <figcaption id="caption">Fig. 1.</figcaption>
+</figure>
+<div class="key" aria-hidden="true">
+  <span style="--sw: var(--ink)">ends in a round</span>
+  <span style="--sw: var(--g2)">ends in nought</span>
+  <span style="--sw: var(--mark)">the given minute</span>
+</div>
+<figure>
+  <canvas id="chart" width="1000" height="440" role="img" aria-label="The given minute's run, one point per step, its height the number reached: scattered while the run wanders, then repeating."></canvas>
+  <figcaption id="caption2" class="run">Fig. 2.</figcaption>
+</figure>
+
+<h2>Construction</h2>
+<p>Let the minute be read as a number of four figures, the hour and then the minutes, so that a quarter to four in the afternoon is 1545. Let it be squared, the square written out in eight figures with noughts in front if it is short, and the middle four kept. Thus 1545 squared is 02387025, and the middle four are 3870. Let the same be done to 3870, and so on, until a number comes that has come before. This is the <i>middle-square</i> rule, which John von Neumann put forward in 1949 as a way for a computing machine to make its own random digits.<sup><a href="#n1">1</a></sup></p>
+<p>Let a dial be drawn for the day, midnight at the top and noon at the bottom, and let each of its 1,440 minutes put out a spoke, as long as the number of steps that minute takes before it falls into a run that repeats: a <i>round</i>. Let the spokes of minutes that fall to nought, after which the rule gives nothing but nought, be grey. Fig. 2 follows the given minute&rsquo;s run step by step, the height of each point being the number reached, in blue while it wanders and in ink once the round has begun.</p>
+<p>Von Neumann himself worked with numbers of many more figures. Four figures are taken here because a clock shows four, and because ten thousand numbers can be followed to the end.<sup><a href="#n1">1</a></sup></p>
+
+<h2>Demonstration</h2>
+<p>Each number has one square and one middle, so each number has exactly one successor, and the run from any minute is fixed by the minute alone. There are only ten thousand numbers of four figures. So within ten thousand and one steps some number must come a second time; and since its successor is fixed, from then on the run repeats what followed it the first time, round and round, without end.</p>
+<p class="therefore">Therefore whoever gives the same minute sees the same run, square for square, and every run, from every minute, ends in a round; and the figures that looked like chance were never anything but this one map, followed from a given place.</p>
+<p class="qed">Which was to be shown.</p>
+
+<h2>Corollaries</h2>
+<p>The bound of ten thousand steps is generous; the rule comes round far sooner. Counted over every number, there are only eight rounds: four numbers that square to themselves in the middle, <a href="?t=0100">0100</a>, <a href="?t=2500">2500</a>, <a href="?t=3792">3792</a> and <a href="?t=7600">7600</a>; the nought, which stays nought; and three rounds of four, of which the one that gathers most numbers is 6100, 2100, 4100, 8100. No number takes more than 107 steps before it falls in, and the only one that takes so many is <a href="?t=6239">6239</a>. On the clock the longest runs belong to <a href="?t=0746">07:46</a> and <a href="?t=0915">09:15</a>, 102 steps each.<sup><a href="#n2">2</a></sup></p>
+<p>Most of the day drains to the same few places. Of the 1,440 minutes of a day, 894 end in the round of 6100 and 312 in nought. And 3,890 of the ten thousand numbers are the middle of no square at all: no run passes through them unless it starts there. The hour after midnight is all grey: a minute such as 00:37 squares to a number too short to have a middle, and the run sinks to nought within a few steps. The number 3792 is the strangest: it is its own successor, and no other number leads to it; it can be reached only by being given, and no minute of the clock reaches it.<sup><a href="#n2">2</a></sup> Brian Hayes has mapped where all ten thousand starts end, and found 6239 and 3792 before this page did.<sup><a href="#n3">3</a></sup></p>
+<p>Von Neumann knew the danger, writing that &ldquo;one always fears the appearance of undetected short cycles,&rdquo; and named the deeper fault plainly: &ldquo;Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin.&rdquo;<sup><a href="#n1">1</a></sup> The generators used now have rounds so long that no machine will finish one, and so they pass for chance. But they repeat as surely as this one does; it is only the round that has grown.</p>
+
+<section class="notes">
+<h2>Notes</h2>
+<p id="n1">1. John von Neumann, &ldquo;Various techniques used in connection with random digits,&rdquo; in <i>Monte Carlo Method</i>, National Bureau of Standards Applied Mathematics Series 12 (1951), 36&ndash;38; given as a talk in 1949. See <a href="https://en.wikipedia.org/wiki/Middle-square_method">&ldquo;Middle-square method,&rdquo; Wikipedia</a>, which also names the four numbers that square to themselves and the round 0540, 2916, 5030, 3009.</p>
+<p id="n2">2. Counted by this page&rsquo;s own rule, following every number from 0000 to 9999 until it repeats.</p>
+<p id="n3">3. Brian Hayes, <a href="http://bit-player.org/2022/the-middle-of-the-square">&ldquo;The Middle of the Square,&rdquo;</a> <i>bit-player</i>, 8 August 2022.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="square.js"></script>
+</body>
+</html>
