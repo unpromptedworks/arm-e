@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposition IV. The grain of a number — Unrolled</title>
+<meta name="description" content="A number made the multiplier of a machine for chance, the one the ZX Spectrum used: every pair it can give is drawn, and lies on a lattice of straight lines whatever the number.">
+<meta property="og:title" content="Proposition IV. The grain of a number">
+<meta property="og:description" content="Any number, made the multiplier of a machine for chance, draws a crystal; the only question is the size of its grain.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Proposition IV</p>
+<h1>The grain of a number</h1>
+<p class="enunciation">Given a number, to make it the multiplier of a generator of random numbers, to set down every pair of figures the machine can give, and to show that, whatever the number, the pairs lie in rows like the atoms of a crystal.</p>
+
+<form class="given" id="given">
+  <label for="number">Given the number</label>
+  <input type="text" id="number" inputmode="numeric" autocomplete="off" spellcheck="false">
+  <button type="submit">Draw</button>
+</form>
+
+<figure>
+  <canvas id="whole" class="smooth" width="800" height="800" role="img" aria-label="A square of 65,537 dots, each a number across and the number the rule makes of it up; for the multiplier 75 they fall in 75 steep parallel rows."></canvas>
+  <figcaption id="caption">Fig. 1.</figcaption>
+</figure>
+<figure>
+  <canvas id="near" width="800" height="800" role="img" aria-label="The middle of the same square magnified: the dots stand on grey parallel lines, and two blue strokes mark the shortest steps between them."></canvas>
+  <figcaption id="caption2">Fig. 2.</figcaption>
+</figure>
+
+<h2>Construction</h2>
+<p>Let the number be divided by 65,537, and let its remainder be the <i>multiplier</i>. Let any number from 1 to 65,536 be multiplied by it and divided again by 65,537, and let the remainder be that number&rsquo;s successor; let the successor be treated the same way, and so on. This is the rule of the ZX Spectrum, whose manual gives the multiplier 75 and the divisor 65,537, and whose <span class="sc">RND</span> is this rule, shifted by one, divided down to a fraction.<sup><a href="#n1">1</a></sup> It is the plainest of the <i>multiplicative congruential</i> rules, for decades the commonest way for a computer to make chance.</p>
+<p>Let a square be ruled, and for every number let a dot be set with the number across and its successor up. Fig. 1 lays the dots down in the order the rule gives them, starting from 1, so that the square fills as the machine runs. Fig. 2 takes the middle of the square and magnifies it until single dots can be told apart; the grey lines are drawn through them along the shortest step from one dot to another, and the shortest step is drawn in solid blue, and the shortest that does not run the same way in broken blue. Fig. 1 is drawn at the screen&rsquo;s own pixels, each as dark as the dots that fall in it; where the rows are finer than a pixel, the eye sees only a grey.</p>
+
+<h2>Demonstration</h2>
+<p>Let a number be <i>x</i> and its successor <i>y</i>. Since <i>y</i> is the remainder of the multiplier times <i>x</i>, there is a whole number <i>k</i> such that <i>y</i> is the multiplier times <i>x</i>, less <i>k</i> times 65,537. So the dot (<i>x</i>, <i>y</i>) is reached from the corner of the square by taking <i>x</i> steps of one across and the multiplier up, and <i>k</i> steps of 65,537 down. Every dot is therefore a point of the one lattice made by these two steps, and every point of that lattice within the square is a dot, for each <i>x</i> admits exactly one <i>k</i>.</p>
+<p>A lattice in the plane is made as well by its two shortest steps as by any others, and the rows along its shortest step hold all its points. Let the side of the square be counted in 65,537 units. Each point has the same share of its area, 65,537 square units, so if the shortest step is short, the rows are far apart and few. Nor can the step be long: no lattice whose points have that share has a shortest step longer than the square root of twice 65,537 over the root of three, about 275.1, the length it has when its points are packed like the cells of a honeycomb.<sup><a href="#n2">2</a></sup></p>
+<p class="therefore">Therefore whoever gives the same number sees the same rows; every number gives rows, none closer than 238 units apart, a two-hundred-and-seventy-fifth of the side; and the best a multiplier can do is to make its grain too fine to see, never to have none.</p>
+<p class="qed">Which was to be shown.</p>
+
+<h2>Corollaries</h2>
+<p>The Spectrum&rsquo;s own <a href="?n=75">75</a> is a coarse choice. Its shortest step is the very first, one across and 75 up, so its dots stand on 75 steep rows, and a Spectrum left plotting random points on its screen is reported to show its pattern within minutes;<sup><a href="#n3">3</a></sup> of the 65,535 multipliers from 2 to 65,536, only 5,361 have a coarser grain. Its run is as long as a run can be, 65,536 steps before 1 comes back, and the length did not save it. The multiplier <a href="?n=3">3</a> has a run as long, and its dots lie on three lines.<sup><a href="#n4">4</a></sup></p>
+<p>The finest grain belongs to four multipliers, <a href="?n=18260">18,260</a>, <a href="?n=22658">22,658</a>, <a href="?n=42879">42,879</a> and <a href="?n=47277">47,277</a>, whose shortest step is 274.2, within a part in three hundred of the honeycomb&rsquo;s bound; each has the longest run, and each spreads its dots over 342 or 343 rows. They are one figure four times. A multiplier and the one that undoes it draw the same square turned over on its diagonal, as 75 and <a href="?n=45439">45,439</a> do; and a multiplier and its remainder taken from 65,537 draw the same square turned upside down. 18,260 and 47,277 are such a pair, and so are 22,658 and 42,879, which undo the first two.<sup><a href="#n4">4</a></sup></p>
+<p>The squarest lattice of all is <a href="?n=256">256</a>, because 256 times 256 is 65,536, one short of the divisor, so its two shortest steps are equal and at right angles; its grain is finer than that of 62,565 others. Yet its run is 1, 256, 65,536, 65,281, and back to 1: four steps. The grain measures how evenly a rule lays out the pairs it gives, not how many it gives before it repeats; a machine for chance has to pass both tests, and passing them is still not chance.<sup><a href="#n4">4</a></sup></p>
+<p>In three figures at a time the rows become planes. George Marsaglia proved in 1968 that the triples of every such rule lie on a few parallel planes, and the rule called <span class="sc">RANDU</span>, long shipped with large computers, put all its triples on fifteen.<sup><a href="#n5">5</a></sup> The test of the shortest step, in any number of figures, is now called the <i>spectral test</i>, and generators are still chosen by it.<sup><a href="#n2">2</a></sup></p>
+
+<section class="notes">
+<h2>Notes</h2>
+<p id="n1">1. <a href="https://worldofspectrum.org/ZXBasicManual/zxmanchap11.html"><i>Sinclair ZX Spectrum BASIC Programming</i>, chapter 11, &ldquo;Random numbers&rdquo;</a>, which gives the divisor 65,537 and the multiplier 75; the ROM adds one to its stored number before multiplying and takes one away after, so its pairs are these dots moved one place down and to the left.</p>
+<p id="n2">2. <a href="https://en.wikipedia.org/wiki/Spectral_test">&ldquo;Spectral test,&rdquo; Wikipedia</a>; and Donald E. Knuth, <i>The Art of Computer Programming</i>, vol. 2, section 3.3.4. The bound for two figures is the one Lagrange and Gauss found for the shortest vector of a lattice in the plane.</p>
+<p id="n3">3. Reported in <a href="https://bbcbasic.net/forum/viewtopic.php?p=5264">a BBC BASIC forum thread on RANDU</a>, of a Sinclair BASIC program plotting random pixels.</p>
+<p id="n4">4. Counted by this page&rsquo;s own rule, reducing the lattice of every multiplier from 2 to 65,536 and counting rows and runs.</p>
+<p id="n5">5. George Marsaglia, &ldquo;Random numbers fall mainly in the planes,&rdquo; <i>Proceedings of the National Academy of Sciences</i> 61 (1968), 25&ndash;28; see <a href="https://en.wikipedia.org/wiki/RANDU">&ldquo;RANDU,&rdquo; Wikipedia</a>.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="grain.js"></script>
+</body>
+</html>

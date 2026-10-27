@@ -49,7 +49,7 @@ header.top::after { content: ""; display: block; margin: 0.9rem auto 0; width: 1
 
 h1 { font-weight: 400; font-size: 1.9rem; line-height: 1.2; text-align: center; margin: 0 0 0.35rem; }
 .prop-no { text-align: center; font-size: 0.95rem; letter-spacing: 0.32em; text-transform: uppercase; margin: 0 0 1.6rem; }
-.enunciation { font-style: italic; text-align: center; margin: 0 auto 2rem; max-width: 33rem; }
+.enunciation { hyphens: none; font-style: italic; text-align: center; margin: 0 auto 2rem; max-width: 33rem; }
 h2 { font-weight: 400; font-size: 0.95rem; letter-spacing: 0.24em; text-transform: uppercase; margin: 2.4rem 0 0.6rem; }
 p { margin: 0 0 1rem; hyphens: auto; }
 .therefore { margin-top: 1.6rem; }
@@ -101,3 +101,5 @@ ol.contents .e { display: block; font-style: italic; color: var(--quiet); font-s
 footer { margin-top: 3.5rem; padding-top: 0.8rem; border-top: 3px double var(--rule); font-size: 0.95rem; color: var(--quiet); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; }
 .run { font-size: 0.95rem; color: var(--quiet); text-align: center; margin: -0.6rem auto 1.4rem; max-width: 34rem; hyphens: none; }
 .run b { font-weight: 400; color: var(--ink); text-decoration: underline; text-decoration-color: var(--mark); text-underline-offset: 0.2em; }
+.sc { font-size: 0.82em; letter-spacing: 0.08em; }
+figure canvas.smooth { image-rendering: auto; }
