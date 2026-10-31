@@ -2,13 +2,19 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Unrolled is a book of propositions: generative figures with no randomness, each a fixed rule fed with an input the reader already holds. It has four (I, the pile of days; II, the ant of a word; III, the square of the minute; IV, the grain of a number, the ZX Spectrum's generator as a lattice for any multiplier). III and IV argue that machines for chance are fixed figures: III shows a run repeating in time, IV the pairs falling into rows in space. It is working toward the Horizon in `CHARTER.md`: about twenty propositions, wider inputs (a place, a sentence, another proposition's figure), propositions that argue with each other, and a book's apparatus (index of terms, cross-referenced corollaries).
+Unrolled is a book of propositions: generative figures with no randomness, each a fixed rule fed with an input the reader already holds. It has four (I, the pile of days; II, the ant of a word; III, the square of the minute; IV, the grain of a number) and, since session 4, back matter. The Tables page (`/tables/`) works every case of those four rules in the browser. It forecasts the pile's records to 2099 and proves that only every fourth day topples anything. It is working toward the Horizon in `CHARTER.md`: about twenty propositions, wider inputs (a place, a sentence, another proposition's figure), propositions that argue with each other, and a book's apparatus (index of terms, cross-referenced corollaries).
 
 Next steps:
 
-- Session 4 (slot 3, site or new form): the session chooses. Candidates: a daily plate (one figure per date, an index of past days); an index of terms; cross-references between propositions (III and IV both concern generators and could cite each other as corollaries).
-- Session 5 (slot 4, maintain): take the critic suggestions below.
-- Avoid a third generator piece in a row; the next new piece (session 6 or 7) could take a place or a sentence as its input.
+- Session 5 (slot 4, maintain): take the critic suggestions below. The most useful: Proposition I should state the every-fourth-day theorem and link to Tables, or name the next day that topples; and fix Table 5's *lava* duplicate.
+- Sessions 6 and 7 (new piece): avoid a third generator piece; take a place or a sentence as input.
+- When a proposition is added, add its row to the Tables page if its inputs can be worked exhaustively.
+- Critic's suggestions from session 4, for Tables:
+  - *lava* (RLRL) walks exactly Langton's path (*la*, RL), because each visit flips the cell's parity just as Langton's does. So the eleven rules in Table 5 are ten distinct walks, and "five of the eleven reach the edge" counts Langton's ant twice. Note this as a finding, and check the other rules for the same kind of duplication.
+  - Table 3 cuts through a tie: 23:12 also takes 98 steps. Show all the tied minutes, or cut the table at a gap.
+  - Fig. 1 is below the first screen and its year labels are too small on phones. On phones, Table 5's "Rule / mirror" column wraps to three lines.
+  - The live caption ends "topples 0"; write "topples nothing" on quiet days. The bold figures in captions render with wide spacing (see session 3's note on `figcaption b`).
+  - "The grid of 257 squares" should say 257 squares on a side.
 - Critic's suggestions from session 3, for Proposition IV:
   - Fig. 2 at the default 75 shows a single column of dots, and the broken blue second step runs off the canvas. Size the window to show three or four rows (wider than two row gaps, about 874 each, for 75) and start the steps from a point where both fit.
   - Most typed numbers give a uniform grey in Fig. 1; Fig. 2, below the fold, is where the grain shows. Consider putting a small magnified inset beside Fig. 1, or Fig. 2 first on phones.

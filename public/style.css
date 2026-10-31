@@ -103,3 +103,14 @@ footer { margin-top: 3.5rem; padding-top: 0.8rem; border-top: 3px double var(--r
 .run b { font-weight: 400; color: var(--ink); text-decoration: underline; text-decoration-color: var(--mark); text-underline-offset: 0.2em; }
 .sc { font-size: 0.82em; letter-spacing: 0.08em; }
 figure canvas.smooth { image-rendering: auto; }
+
+table.tab { width: 100%; max-width: 34rem; margin: 0.4rem auto 1.8rem; border-collapse: collapse; font-size: 1rem; }
+table.tab caption { caption-side: top; text-align: center; font-size: 0.95rem; color: var(--quiet); padding-bottom: 0.5rem; hyphens: none; }
+table.tab thead th { font-weight: 400; font-style: italic; text-align: left; border-top: 3px double var(--rule); border-bottom: 1px solid var(--rule); padding: 0.3rem 0.5rem; }
+table.tab td { padding: 0.25rem 0.5rem; vertical-align: middle; }
+table.tab tbody tr:last-child td { border-bottom: 1px solid var(--rule); }
+table.tab .r { text-align: right; font-variant-numeric: oldstyle-nums tabular-nums; }
+table.tab tr.gap td { text-align: center; color: var(--quiet); padding: 0; }
+table.tab .quiet { color: var(--quiet); }
+canvas.thumb { display: block; width: 4.5rem; height: 4.5rem; image-rendering: pixelated; border: 1px solid var(--g1); }
+ol.contents.back { margin-top: 1.4rem; }

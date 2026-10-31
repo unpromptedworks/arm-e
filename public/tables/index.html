@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tables — Unrolled</title>
+<meta name="description" content="Every case of the book's rules, worked in the reader's browser and sorted: the greatest days of the pile, the records it will set before 2100, the longest minutes, the finest years and the ants of four letters.">
+<meta property="og:title" content="Tables of Unrolled">
+<meta property="og:description" content="Every case of the book's rules, worked and sorted. Because nothing is rolled, the table of records runs forward to 2099.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Tables</p>
+<h1>Every case, worked</h1>
+<p class="enunciation">To work every case of the book&rsquo;s rules, to set out the remarkable ones in tables, and to show that where nothing is rolled a table of records is also a table of forecasts.</p>
+
+<p>Each proposition takes one input and draws one figure. These tables take all of them at once: every day from 1970 to 2099, every minute of the day, every year as a multiplier, every short rule of an ant. Nothing here is stored. The tables are worked afresh in the reader&rsquo;s browser each time the page opens, about a second&rsquo;s work, and come out the same each time. Every entry is a link to its figure.</p>
+
+<h2>I. The pile of days</h2>
+<p>Proposition I drops one grain a day on a single square and marks what the day&rsquo;s grain topples. Here all 47,482 days to the end of 2099 are dropped in turn and every avalanche counted.</p>
+
+<figure>
+  <canvas id="record" class="smooth" width="1200" height="520" role="img" aria-label="A scatter of dots rising from left to right in a widening fan, under a black staircase of records, with a blue vertical line at today."></canvas>
+  <figcaption id="c1">Fig. 1. Working every day from 1970 to 2099&hellip;</figcaption>
+</figure>
+
+<table class="tab">
+  <caption>Table 1. The ten greatest days to date</caption>
+  <thead><tr><th class="r">No.</th><th>Day</th><th class="r">Squares toppled</th></tr></thead>
+  <tbody id="t1"><tr><td colspan="3">Working&hellip;</td></tr></tbody>
+</table>
+
+<table class="tab">
+  <caption>Table 2. The next records: days that will topple more squares than any day before them</caption>
+  <thead><tr><th>Day</th><th class="r">Grains</th><th class="r">Squares toppled</th></tr></thead>
+  <tbody id="t2"><tr><td colspan="3">Working&hellip;</td></tr></tbody>
+</table>
+
+<p><i>Theorem.</i> Only every fourth day topples anything, and every fourth day topples at least one square: the days whose grain count is a multiple of four.</p>
+<p><i>Demonstration.</i> The grains fall on one square, so the pile looks the same turned a quarter turn, and its four squares next to the centre topple equally often, say <i>t</i> times each. Each of their topplings sends one grain to the centre, and each toppling of the centre takes four away. So after <i>n</i> grains the centre holds <i>n</i>, less four for every toppling of its own, plus 4<i>t</i>: the same remainder as <i>n</i> on division by four. At rest it holds at most three, so it holds exactly that remainder. The next grain makes it four, and starts an avalanche, if and only if the remainder was three, that is, if and only if the new grain count is a multiple of four.</p>
+<p class="therefore">Therefore three days in four leave the pile untouched, which is why Proposition I so often shows no blue; and a day&rsquo;s chance of an avalanche is known from its date alone, before a grain is dropped. The page checks this against every day it works, and it holds for all of them. How large the avalanche will be is not so easily known: for that the pile has to be built.</p>
+<p class="qed">Which was to be shown.</p>
+<p>Table 2 is a forecast in the only sense this book allows: not a guess, but a sum already done. Nothing can arrive between now and then to change it.</p>
+
+<h2>II. The minutes</h2>
+<p>Proposition III squares each minute of the clock, keeps the middle four figures, and repeats until a number comes round again. These are the minutes that wander longest before they fall into a round. All eight end in the round of 6100.</p>
+<table class="tab">
+  <caption>Table 3. The longest minutes of the day</caption>
+  <thead><tr><th class="r">No.</th><th>Minute</th><th class="r">Steps before the round</th></tr></thead>
+  <tbody id="t3"></tbody>
+</table>
+
+<h2>III. The years as multipliers</h2>
+<p>Proposition IV takes any number as the multiplier of the ZX Spectrum&rsquo;s generator and finds the shortest step of the lattice its pairs fall on: the longer the step, the finer the grain. Here every year from 1970 to 2099 is given as the multiplier.</p>
+<table class="tab">
+  <caption>Table 4. The finest and coarsest years, by shortest step</caption>
+  <thead><tr><th class="r">Rank</th><th>Year</th><th class="r">Shortest step</th></tr></thead>
+  <tbody id="t4"></tbody>
+</table>
+<p class="run" id="c4"></p>
+<p>The coarsest year is 2048, which is two to the eleventh: 32 steps of it make 65,536, one short of the modulus, so its shortest step is barely longer than 32. The year as a multiplier and the year as a date have nothing to do with each other, and yet both are fixed; 1994 had the finest grain of any year in the table, and 2034 will have the third.</p>
+
+<h2>IV. The ants of short words</h2>
+<p>Proposition II reads a word as the rule of an ant, a vowel turning it left and a consonant right; only the pattern of vowels and consonants matters, and the pattern&rsquo;s mirror draws the mirror image. So every rule of two to four letters, apart from the ones that never turn left or never turn right, is drawn by one of the eleven words below, or by its mirror. Each is shown after 400,000 steps on the grid of 257 squares that closes on itself.</p>
+<table class="tab ants">
+  <caption>Table 5. Every rule of two to four letters, up to mirror image</caption>
+  <thead><tr><th></th><th>Word</th><th>Rule / mirror</th><th class="r">Across</th><th class="r">Squares marked</th></tr></thead>
+  <tbody id="t5"></tbody>
+</table>
+<p>&ldquo;Across&rdquo; is the width of the smallest square holding the trail; &ldquo;all&rdquo; means the ant has walked off one edge and come back on the other. Five of the eleven reach the edge, among them <i>la</i>, Langton&rsquo;s ant, on its road. The others stay inside a square of their own making, and of those <i>tree</i> keeps the smallest. No rule here could have been ranked without being run.</p>
+
+<section class="notes">
+<h2>Notes</h2>
+<p>The code that works the tables is <a href="tables.js">tables.js</a>, which repeats the rules of Propositions I to IV in a few lines each; it is the same code as the propositions&rsquo;, not a copy of their results. The claims in the text above were checked by running it to the end of 2099.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="tables.js"></script>
+</body>
+</html>
