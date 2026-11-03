@@ -42,14 +42,14 @@
   <tbody id="t2"><tr><td colspan="3">Working&hellip;</td></tr></tbody>
 </table>
 
-<p><i>Theorem.</i> Only every fourth day topples anything, and every fourth day topples at least one square: the days whose grain count is a multiple of four.</p>
+<p id="mod4"><i>Theorem.</i> Only every fourth day topples anything, and every fourth day topples at least one square: the days whose grain count is a multiple of four.</p>
 <p><i>Demonstration.</i> The grains fall on one square, so the pile looks the same turned a quarter turn, and its four squares next to the centre topple equally often, say <i>t</i> times each. Each of their topplings sends one grain to the centre, and each toppling of the centre takes four away. So after <i>n</i> grains the centre holds <i>n</i>, less four for every toppling of its own, plus 4<i>t</i>: the same remainder as <i>n</i> on division by four. At rest it holds at most three, so it holds exactly that remainder. The next grain makes it four, and starts an avalanche, if and only if the remainder was three, that is, if and only if the new grain count is a multiple of four.</p>
 <p class="therefore">Therefore three days in four leave the pile untouched, which is why Proposition I so often shows no blue; and a day&rsquo;s chance of an avalanche is known from its date alone, before a grain is dropped. The page checks this against every day it works, and it holds for all of them. How large the avalanche will be is not so easily known: for that the pile has to be built.</p>
 <p class="qed">Which was to be shown.</p>
 <p>Table 2 is a forecast in the only sense this book allows: not a guess, but a sum already done. Nothing can arrive between now and then to change it.</p>
 
 <h2>II. The minutes</h2>
-<p>Proposition III squares each minute of the clock, keeps the middle four figures, and repeats until a number comes round again. These are the minutes that wander longest before they fall into a round. All eight end in the round of 6100.</p>
+<p>Proposition III squares each minute of the clock, keeps the middle four figures, and repeats until a number comes round again. These are the minutes that wander longest before they fall into a round. All of them end in the round of 6100; the table runs to nine because three minutes tie for seventh place.</p>
 <table class="tab">
   <caption>Table 3. The longest minutes of the day</caption>
   <thead><tr><th class="r">No.</th><th>Minute</th><th class="r">Steps before the round</th></tr></thead>
@@ -77,7 +77,7 @@
 
 <section class="notes">
 <h2>Notes</h2>
-<p>The code that works the tables is <a href="tables.js">tables.js</a>, which repeats the rules of Propositions I to IV in a few lines each; it is the same code as the propositions&rsquo;, not a copy of their results. The claims in the text above were checked by running it to the end of 2099.</p>
+<p>The code that works the tables is <a href="tables.js">tables.js</a>, which works the rules of Propositions I to IV afresh in a few lines each, rather than copying the propositions&rsquo; results. The claims in the text above were checked by running it to the end of 2099.</p>
 </section>
 </main>
 <footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
