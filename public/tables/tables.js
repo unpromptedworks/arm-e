@@ -1,6 +1,6 @@
 // Tables. Every case of four of the book's rules, worked in the reader's
 // browser, sorted, and the remarkable ones set out with links.
-// The same code runs in Node to check the claims in the text. No random numbers.
+// The same file was run in Node to check the claims in the text. No random numbers.
 (function () {
   const DAY = 86400000, EPOCH = Date.UTC(1970, 0, 1);
   const dayNo = (iso) => { const [y, m, d] = iso.split("-").map(Number); return Math.round((Date.UTC(y, m - 1, d) - EPOCH) / DAY) + 1; };
@@ -100,7 +100,10 @@
   let sizes = null;
   function drawRecord() {
     const cv = document.getElementById("record");
-    const W = 1200, H = 520, L = 20, R = 20, T = 20, B = 50;
+    // letters sized for the width the canvas is shown at, about 13 pixels on screen
+    const W = 1200, H = 520;
+    const f = Math.round(Math.max(24, 13 * W / Math.max(1, cv.clientWidth)));
+    const L = Math.round(f * 4), R = 20, T = Math.round(f * 0.7), B = Math.round(f * 1.9);
     cv.width = W; cv.height = H;
     const ctx = cv.getContext("2d");
     const ink = css("--ink"), past = css("--g3"), future = css("--g2"), mark = css("--mark"), quiet = css("--quiet");
@@ -124,12 +127,20 @@
     ctx.moveTo(X(todayNo), T); ctx.lineTo(X(todayNo), H - B); ctx.stroke();
     // years
     ctx.strokeStyle = ink; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(L, H - B + 0.5); ctx.lineTo(W - R, H - B + 0.5); ctx.stroke();
-    ctx.fillStyle = quiet; ctx.font = "26px 'Old Standard', serif"; ctx.textBaseline = "top";
+    ctx.fillStyle = quiet; ctx.font = f + "px 'Old Standard', serif"; ctx.textBaseline = "top";
     for (const y of [1970, 2000, 2030, 2060, 2099]) {
       const x = X(dayNo(y + "-01-01"));
       ctx.textAlign = y === 1970 ? "left" : y === 2099 ? "right" : "center";
       ctx.fillRect(x, H - B, 1, 8);
-      ctx.fillText(String(y), x, H - B + 14);
+      ctx.fillText(String(y), x, H - B + Math.round(f * 0.45));
+    }
+    // squares toppled
+    ctx.beginPath(); ctx.moveTo(L - 0.5, T); ctx.lineTo(L - 0.5, H - B); ctx.stroke();
+    ctx.textAlign = "right"; ctx.textBaseline = "middle";
+    const stepV = top > 12000 ? 5000 : top > 6000 ? 2500 : 1000;
+    for (let v = 0; v <= top; v += stepV) {
+      ctx.fillRect(L - 8, Math.round(Y(v)), 8, 1);
+      ctx.fillText(v.toLocaleString("en-GB"), L - 12, Y(v));
     }
   }
 
@@ -153,14 +164,16 @@
     for (let n = 1; n <= upto; n++) if (!sizes[n]) quiet++;
     const t = sizes[upto];
     say("c1", "Fig. 1. Every fourth day&rsquo;s avalanche from 1970 to 2099, one dot for each such day, its height the squares toppled: grey after today, which is the blue line. The staircase in ink is the record. Of the " + num(upto) +
-      " days to " + longDate(upto) + ", <b>" + num(quiet) + "</b> toppled nothing; today&rsquo;s grain, the " + num(upto) + "th, topples <b>" + num(t) + "</b>.");
+      " days to " + longDate(upto) + ", <b>" + num(quiet) + "</b> toppled nothing. Today&rsquo;s grain, number " + num(upto) + ", topples " + (t ? "<b>" + num(t) + "</b> square" + (t === 1 ? "" : "s") : "nothing") + ". The scale at the left is squares toppled.");
   }
 
   function minuteTable() {
     const all = minuteTails().sort((a, b) => b.steps - a.steps || a.s - b.s);
     const hm = (s) => String(Math.floor(s / 100)).padStart(2, "0") + ":" + String(s % 100).padStart(2, "0");
-    fill("t3", all.slice(0, 8).map((r, i) =>
-      '<tr><td class="r">' + (i + 1) + '</td><td><a href="/minute/?t=' + String(r.s).padStart(4, "0") + '">' + hm(r.s) + '</a></td><td class="r">' + r.steps + "</td></tr>"));
+    // eight rows, and any minutes tied with the eighth
+    const cut = all.filter((r) => r.steps >= all[7].steps);
+    fill("t3", cut.map((r, i) =>
+      '<tr><td class="r">' + (1 + all.findIndex((q) => q.steps === r.steps)) + '</td><td><a href="/minute/?t=' + String(r.s).padStart(4, "0") + '">' + hm(r.s) + '</a></td><td class="r">' + r.steps + "</td></tr>"));
   }
 
   function yearTable() {
@@ -183,7 +196,7 @@
     rows.sort((p, q) => p.rule.length - q.rule.length || p.r.across - q.r.across);
     fill("t5", rows.map((o, i) => {
       const mirror = [...o.rule].map((c) => (c === "L" ? "R" : "L")).join("");
-      return '<tr><td><canvas class="thumb" id="ant' + i + '" width="257" height="257"></canvas></td><td><a href="/word/?w=' + o.w + '"><i>' + o.w + "</i></a></td><td>" + o.rule + " <span class=\"quiet\">/ " + mirror + '</span></td><td class="r">' + (o.r.across >= 257 ? "all" : o.r.across) + '</td><td class="r">' + num(o.r.touched) + "</td></tr>";
+      return '<tr><td><canvas class="thumb" id="ant' + i + '" width="257" height="257"></canvas></td><td><a href="/word/?w=' + o.w + '"><i>' + o.w + "</i></a></td><td class=\"nw\">" + o.rule + " <span class=\"quiet\">/ " + mirror + '</span></td><td class="r">' + (o.r.across >= 257 ? "all" : o.r.across) + '</td><td class="r">' + num(o.r.touched) + "</td></tr>";
     }));
     rows.forEach((o, i) => {
       const cv = document.getElementById("ant" + i), ctx = cv.getContext("2d");
@@ -203,5 +216,7 @@
   }
   all();
   document.fonts.ready.then(() => { if (sizes) drawRecord(); });
+  let lastW = 0;
+  addEventListener("resize", () => { const cv = document.getElementById("record"); if (sizes && cv.clientWidth !== lastW) { lastW = cv.clientWidth; drawRecord(); } });
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { antTable(); if (sizes) drawRecord(); });
 })();
