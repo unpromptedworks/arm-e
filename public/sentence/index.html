@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposition V. The walk of a sentence — Unrolled</title>
+<meta name="description" content="Any sentence, walked: each word a step as long as its letters, a fixed turn after each. Whether the walk ever closes is decided by counting the words.">
+<meta property="og:title" content="Proposition V. The walk of a sentence">
+<meta property="og:description" content="Any sentence, walked word by word. Whether the walk ever closes is decided by counting its words.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Proposition V</p>
+<h1>The walk of a sentence</h1>
+<p class="enunciation">Given any sentence, to walk it word by word, turning the same way after every word, and to show that whether the walk ever comes home is decided by the number of its words, except in the one case where the words must balance exactly.</p>
+
+<form class="given" id="given">
+  <label for="sentence">Given the sentence</label>
+  <input type="text" class="long" id="sentence" maxlength="400" autocomplete="off" spellcheck="false">
+  <label for="turn">turning</label>
+  <select id="turn">
+    <option value="3">a third</option>
+    <option value="4" selected>a quarter</option>
+    <option value="5">a fifth</option>
+    <option value="6">a sixth</option>
+    <option value="7">a seventh</option>
+    <option value="8">an eighth</option>
+    <option value="9">a ninth</option>
+    <option value="10">a tenth</option>
+    <option value="12">a twelfth</option>
+  </select>
+  <button type="submit">Walk</button>
+</form>
+
+<figure>
+  <canvas id="figure" class="smooth" width="900" height="900" role="img" aria-label="The path of a pen walking the sentence, read over and over."></canvas>
+  <figcaption id="caption">Fig. 1.</figcaption>
+</figure>
+<p class="run" id="run"></p>
+
+<h2>Construction</h2>
+<p>Let the sentence be divided at its spaces into words, and let each word be measured by the letters and digits in it, so that <i>breadthless</i> is eleven long and a comma or a dash counts for nothing. Let a pen stand facing up the page. For each word in turn, let it draw a straight line as many units long as the word has letters, and then turn to the right through a fixed part of a full turn: a quarter, unless the reader chooses otherwise.</p>
+<p>When the last word is drawn, let the sentence be read again from the first word, the pen going on from where it stopped and facing the way it now faces. Let the readings continue until the pen stands where it began and faces the way it began; from there the walk can only repeat itself. Such a walk is a spirolateral, the figure Frank Odds drew on graph paper as a schoolboy in 1962, made here from words instead of from the numbers one, two, three.<sup><a href="#n1">1</a></sup></p>
+
+<h2>Demonstration</h2>
+<p>Let the sentence have <i>k</i> words and let each turn be one <i>m</i>th of a full turn. One reading turns the pen through <i>k</i> of these parts, which is <i>k</i>/<i>m</i> of a full turn, and carries it some fixed distance from where the reading began. Call that distance and direction the step of the sentence. Every reading draws the same words from a new place, turned through <i>k</i>/<i>m</i> of a full turn from the reading before; so the second reading&rsquo;s step is the first&rsquo;s turned through that much, the third&rsquo;s is turned through twice as much, and so on.</p>
+<p>First, let <i>m</i> not divide <i>k</i>. Reduce <i>k</i>/<i>m</i> to its lowest terms, <i>a</i>/<i>b</i>. Then the pen faces its first way again after <i>b</i> readings and not before, and in those <i>b</i> readings its steps, laid end to end, are the sides of a regular figure of <i>b</i> sides, each turned through <i>a</i>/<i>b</i> of a full turn from the last, the whole turned exactly <i>a</i> times round. A regular figure closes. So the pen is home after <i>b</i> readings, that is <i>m</i> divided by the greatest common divisor of <i>k</i> and <i>m</i>: never after more than <i>m</i>.</p>
+<p>Second, let <i>m</i> divide <i>k</i>. Then every reading begins facing the way the first began, and every step is the same step in the same direction. After any number of readings the pen stands that many steps along one straight line from where it began. It comes home only if the first reading already ends where it began; otherwise it walks off for ever.</p>
+<p class="therefore">Therefore, turning a quarter at each word, a sentence of an odd number of words closes after four readings, a sentence of two, six, ten or fourteen words after two, and a sentence of four, eight or twelve words never closes, unless its first reading happens to return. Outside that last case no word changes which of these it does: the lengths of the words fix only the shape.</p>
+<p class="qed">Which was to be shown.</p>
+
+<h2>Corollaries</h2>
+<p>The first definition in Heath&rsquo;s translation of Euclid, <a href="?s=A+point+is+that+which+has+no+part."><i>A point is that which has no part</i></a>, has eight words, and its step is two units straight up the page. It never closes. The second, <a href="?s=A+line+is+breadthless+length."><i>A line is breadthless length</i></a>, has five, and closes after four readings into a figure that a quarter turn carries onto itself; turned a fifth instead, the same five words never close. The first postulate, <a href="./"><i>to draw a straight line from any point to any point</i></a>, the figure at the head of this page, has eleven words, forty-one letters, and comes home after four readings and 164 units of line, its blue step points making a small square at the middle of the figure.<sup><a href="#n2">2</a></sup></p>
+<p>The opening of Dickens&rsquo;s <i>A Tale of Two Cities</i>, <a href="?s=It+was+the+best+of+times%2C+it+was+the+worst+of+times."><i>It was the best of times, it was the worst of times</i></a>, has twelve words and so cannot close at a quarter turn. Its step is a single unit: after forty-eight words and 156 units of walking the pen has gone one letter&rsquo;s width to the side, and it goes one more at every reading after.<sup><a href="#n3">3</a></sup> At a fifth or a seventh, which twelve does not divide, it closes in five readings or seven.</p>
+<p>The rule of thumb in the books, that a spirolateral closes once its turns add up to whole turns, has known exceptions; a computer search over many angles reported them by the dozen.<sup><a href="#n4">4</a></sup> The demonstration says where true exceptions must lie: a walk whose first reading already makes whole turns repeats itself in the same direction, and the only one of those that closes is the one that happens to be home already. Like the pile of Proposition I, where only one day in four <a href="/tables/#mod4">can topple anything</a>, the walk is decided by a remainder before a single line is drawn, and still has to be drawn to be seen.</p>
+
+<h2 id="fig2">Fig. 2</h2>
+<div class="row" id="row"></div>
+<p class="run">The same sentence at six turns. Each is drawn to fill its square. A walk that never closes is shown for four readings.</p>
+
+<section class="notes">
+<h2>Notes</h2>
+<p id="n1">1. Frank C. Odds, &ldquo;Spirolaterals,&rdquo; <i>The Mathematics Teacher</i> (1973), written at Martin Gardner&rsquo;s encouragement. See <a href="https://en.wikipedia.org/wiki/Spirolateral">&ldquo;Spirolateral,&rdquo; Wikipedia</a>, which also gives the number of readings for spirolaterals of lengths one to <i>n</i>.</p>
+<p id="n2">2. Euclid, <i>The Thirteen Books of Euclid&rsquo;s Elements</i>, translated by T. L. Heath (Cambridge, 1908), Book I, Definitions 1 and 2 and Postulate 1. Public domain.</p>
+<p id="n3">3. Charles Dickens, <i>A Tale of Two Cities</i> (1859), Book I, chapter 1. Public domain.</p>
+<p id="n4">4. Robert J. Krawczyk, <a href="https://www.mi.sanu.ac.rs/vismath/krawczyk/spdesc02.htm">&ldquo;Properties of Spirolaterals&rdquo;</a> (2000): of 561 spirolaterals the rule called closed, 113 were not.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="walk.js"></script>
+</body>
+</html>
