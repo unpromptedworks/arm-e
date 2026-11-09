@@ -119,3 +119,10 @@ table.tab .quiet { color: var(--quiet); }
 table.tab td.nw span { display: block; white-space: nowrap; }
 canvas.thumb { display: block; width: 4.5rem; height: 4.5rem; image-rendering: pixelated; border: 1px solid var(--g1); }
 ol.contents.back { margin-top: 1.4rem; }
+.given input.long { width: 100%; max-width: 30rem; text-align: center; letter-spacing: 0.02em; }
+.given select { font: inherit; color: var(--ink); background: var(--ground); border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; padding: 0.1rem 0.2rem; }
+.row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 34rem; margin: 0 auto 1rem; }
+.row .cell { text-decoration: none; text-align: center; font-size: 0.95rem; color: var(--quiet); }
+.row .cell canvas { display: block; width: 100%; aspect-ratio: 1; border: 1px solid var(--g1); margin-bottom: 0.3rem; }
+.row .cell.here canvas { border-color: var(--mark); }
+.row .cell:hover { color: var(--mark); }
