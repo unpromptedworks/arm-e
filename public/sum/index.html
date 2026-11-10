@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposition VI. The sum of two days — Unrolled</title>
+<meta name="description" content="The sandpiles of two days, laid one on the other and toppled, rest as the pile of a third day that the two dates alone decide. The page topples them and checks every square.">
+<meta property="og:title" content="Proposition VI. The sum of two days">
+<meta property="og:description" content="Two days' sandpiles, laid one on the other and toppled, rest as the pile of a third day that the dates alone decide.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Proposition VI</p>
+<h1>The sum of two days</h1>
+<p class="enunciation">To lay the pile of one day upon the pile of another and topple them, and to show that they come to rest as the pile of a third day, which the two dates alone decide.</p>
+
+<form class="given" id="given">
+  <span class="pair"><label for="dayA">Given the day</label> <input type="date" id="dayA" min="1970-01-01"></span>
+  <span class="pair"><label for="dayB">and the day</label> <input type="date" id="dayB" min="1970-01-01"></span>
+</form>
+
+<figure>
+  <div class="row">
+    <div class="cell"><canvas id="figA" width="1" height="1" role="img" aria-label="The first day's sandpile."></canvas><span id="capA"></span></div>
+    <div class="cell"><canvas id="figB" width="1" height="1" role="img" aria-label="The second day's sandpile."></canvas><span id="capB"></span></div>
+    <div class="cell"><canvas id="figH" width="1" height="1" role="img" aria-label="The two piles added square by square, with the overfull squares in blue."></canvas><span id="capH"></span></div>
+  </div>
+  <figcaption id="cap1">Fig. 1.</figcaption>
+</figure>
+
+<figure>
+  <div class="row two">
+    <div class="cell"><canvas id="figT" width="1" height="1" role="img" aria-label="The added heap toppling round by round."></canvas><span id="capT"></span></div>
+    <div class="cell"><canvas id="figC" width="1" height="1" role="img" aria-label="The pile of the day whose grains are the sum of the two days' grains."></canvas><span id="capC"></span></div>
+  </div>
+  <figcaption id="cap2">Fig. 2.</figcaption>
+</figure>
+<form class="given"><button type="button" id="again">Topple again</button></form>
+<div class="key" aria-hidden="true">
+  <span style="--sw: var(--ground)">no grain</span>
+  <span style="--sw: var(--g1)">one</span>
+  <span style="--sw: var(--g2)">two</span>
+  <span style="--sw: var(--g3)">three</span>
+  <span style="--sw: var(--mark)">four to six, still to topple</span>
+</div>
+
+<h2>Construction</h2>
+<p>Let two days be given, and let the pile of each be built as in <a href="/pile/">Proposition I</a>: one grain for the first of January 1970 and one more for every day after it, all dropped on the middle square and toppled until no square holds four. Let the two piles be laid square on square, so that each square of the heap holds the grains it held in the one pile and in the other; since a pile at rest holds at most three on a square, the heap holds at most six.</p>
+<p>Let every square of the heap that holds four or more topple, giving one grain to each neighbour, all such squares together in rounds, until the heap rests. Beside it, let the grains of the two days be counted and added, let the day be found that has that many grains, and let its pile be built afresh from a single heap on the middle square.</p>
+
+<h2>Demonstration</h2>
+<p>Let the first day have <i>a</i> grains and the second <i>b</i>. Lay <i>a</i>&#8202;+&#8202;<i>b</i> grains on the middle square, and keep <i>b</i> of them in mind as if they were painted. Topple as though only the <i>a</i> unpainted grains were there, until they rest as the first day&rsquo;s pile. Every one of these topplings is allowed in the real heap, since a square that holds four grains without the painted ones holds at least four with them. Now topple as though only the <i>b</i> painted grains were there, until they rest as the second day&rsquo;s pile; for the same reason every one of these topplings is allowed too. The heap is now the two piles laid square on square, which is the heap of Fig. 1, and it was reached from <i>a</i>&#8202;+&#8202;<i>b</i> grains on one square by topplings alone.</p>
+<p>But Dhar proved that from a given heap every way of toppling that ends at rest ends at the same pile.<sup><a href="#n1">1</a></sup> One way is to topple the <i>a</i>&#8202;+&#8202;<i>b</i> grains straight to rest, which gives the pile of the day with <i>a</i>&#8202;+&#8202;<i>b</i> grains. Another is to topple them as above into the heap of Fig. 1 and then on to rest. So the two end alike.</p>
+<p class="therefore">Therefore the two piles, toppled, rest as the pile of the day whose number of grains is the sum of theirs. The first of January 2000, with 10,958 grains, laid on the tenth of November 2026, with 20,768, rests as the pile of <a href="/pile/?d=2056-11-10">10 November 2056</a>, with 31,726, square for square; and the page checks every other pair it is given.</p>
+<p class="qed">Which was to be shown.</p>
+
+<h2>Corollaries</h2>
+<p>Proposition I is the case in which one of the two days is the <a href="?a=1970-01-01">first of January 1970</a>, which has a single grain: the pile of any day laid on that grain rests as the pile of the next day.</p>
+<p>The topplings add too. It is part of the same theorem that each square topples the same number of times whichever way the heap is brought to rest.<sup><a href="#n2">2</a></sup> Built alone, the pile of 1 January 2000 takes 2,196,065 topplings and the pile of 10 November 2026 takes 7,772,656. The heap of the two takes 8,181,163 more, and 10 November 2056, built from one heap, takes 18,149,884, which is their sum. Fig. 2 counts the topplings for whatever pair is given and adds them.</p>
+<p>Every day&rsquo;s pile is a sum in many ways. The pile of 10 November 2056, with 31,726 grains, is the sum of 15,863 pairs of days, each pair counted once and a day allowed to be added to itself, the sixth of June 2013 being added to itself to make it. All of them rest as one pile, and the counts of topplings differ from pair to pair only in how the total is shared out.</p>
+<p>And no two days have the same pile, because a toppling moves grains and never loses one, so the pile of a day holds exactly that day&rsquo;s count. The piles of days add as the counting numbers add, and they cannot be taken away: no pile laid on another makes it smaller.</p>
+
+<section class="notes">
+<h2>Notes</h2>
+<p id="n1">1. Deepak Dhar, &ldquo;Self-organized critical state of sandpile automaton models,&rdquo; <i>Physical Review Letters</i> 64 (1990), 1613&ndash;1616. See also <a href="https://en.wikipedia.org/wiki/Abelian_sandpile_model">&ldquo;Abelian sandpile model,&rdquo; Wikipedia</a>, where the same addition of piles, on a finite grid that loses grains at its edge, makes the sandpile group.</p>
+<p id="n2">2. The number of topplings at each square, the <i>odometer</i>, is the same for every order of toppling; this is the &ldquo;least action principle&rdquo; of Anne Fey, Lionel Levine and Yuval Peres, &ldquo;Growth rates and explosions in sandpiles,&rdquo; <i>Journal of Statistical Physics</i> 138 (2010), 143&ndash;159. The counts above were made by this page&rsquo;s own rule.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="sum.js"></script>
+</body>
+</html>

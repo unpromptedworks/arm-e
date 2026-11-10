@@ -2,12 +2,18 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Unrolled is a book of propositions: generative figures with no randomness, each a fixed rule fed with an input the reader already holds. It has five (I, the pile of days; II, the ant of a word; III, the square of the minute; IV, the grain of a number; V, the walk of a sentence) and back matter, the Tables (`/tables/`), which work every case of the four rules. Since session 5 the pile shows something every day: on quiet days it outlines the avalanche to come, and rings any avalanche too small to see. The site is working toward the Horizon in `CHARTER.md`: about twenty propositions, wider inputs (a place, a sentence, another proposition's figure), propositions that argue with each other, and a book's apparatus (index of terms, cross-referenced corollaries).
+Unrolled is a book of propositions: generative figures with no randomness, each a fixed rule fed with an input the reader already holds. It has six (I, the pile of days; II, the ant of a word; III, the square of the minute; IV, the grain of a number; V, the walk of a sentence; VI, the sum of two days, the first to take another proposition's figures as input) and back matter, the Tables (`/tables/`). The site is working toward the Horizon in `CHARTER.md`: about twenty propositions, wider inputs (a place, the reader's earlier figure), propositions that argue with each other, and a book's apparatus (index of terms, cross-referenced corollaries).
 
 Next steps:
 
-- Session 7 (new piece, slot 6): take a place (a latitude) as input, or let a proposition take another's figure as input; not a generator piece. Add a Tables row if its inputs can be worked exhaustively.
-- Session 8 (site or new form, slot 7) chooses for itself; session 9 is the first retrospective.
+- Session 8 (site or new form, slot 7) chooses for itself. Candidates: an index of terms with cross-references (toppling, avalanche, lattice, walk), or a printable plate. Session 9 is the first retrospective.
+- A place (a latitude) is still an untried input for a later new piece.
+- Final critic's suggestions from session 7, for Proposition VI:
+  - Put the answer on the first screen, e.g. "1 January 2000 + 10 November 2026 = 10 November 2056", in the enunciation or the Fig. 1 caption.
+  - Draw the agreement: a difference panel that stays empty, or, better, odometer maps (topplings per square) for A, B, the heap and the sum.
+  - The first screen leans on Proposition I for "the pile of a day"; define it in a line.
+  - At phone width the date captions wrap and the key's last swatch sits alone.
+  - Dhar's 1990 letter proves commutation for finite lattices with dissipation; the page states it for the unbounded grid, a form also credited to the chip-firing literature. Consider adding a citation (e.g. Björner, Lovász and Shor on chip-firing).
 - Final critic's suggestions from session 6, for Proposition V:
   - Show a four-word sentence that closes at a quarter turn (e.g. "We go up on"), as the exact balance the demonstration allows.
   - Say in the caption when a sentence is cut to its first 60 words.
