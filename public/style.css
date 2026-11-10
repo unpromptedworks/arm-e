@@ -126,3 +126,6 @@ ol.contents.back { margin-top: 1.4rem; }
 .row .cell canvas { display: block; width: 100%; aspect-ratio: 1; border: 1px solid var(--g1); margin-bottom: 0.3rem; }
 .row .cell.here canvas { border-color: var(--mark); }
 .row .cell:hover { color: var(--mark); }
+.row.two { grid-template-columns: repeat(2, 1fr); max-width: 34rem; }
+figure .row { margin-bottom: 0; }
+.given .pair { white-space: nowrap; }
