@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Definitions — Unrolled</title>
+<meta name="description" content="The terms of the book defined in order, as at the head of Euclid's Elements, each with a figure drawn from a fixed given, and an index of every place each term is used.">
+<meta property="og:title" content="Definitions">
+<meta property="og:description" content="The terms of the book defined in order, each with a figure drawn from a fixed given, and an index of where each is used.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Front matter</p>
+<h1>Definitions</h1>
+<p class="enunciation">The terms the propositions use, each defined once, each resting only on those before it, and each shown by a figure drawn by the rule it names.</p>
+
+<p>Euclid begins with things that cannot be drawn: &ldquo;A point is that which has no part. A line is breadthless length.&rdquo;<sup><a href="#n1">1</a></sup> The figure beside such a definition is only a likeness. Here every term names something a rule does, so each figure below is the thing itself, worked from a fixed given named in its caption, and the same on every screen.<sup><a href="#n2">2</a></sup> Where a proposition uses a term, the term links back here; under each definition are the places it is used.</p>
+
+<ol class="defs">
+<li id="d1"><div class="dt"><p><span class="dn">1.</span> A <dfn>given</dfn> is what the reader brings to a rule: a day, a word, a minute of the clock, a number or a sentence. A figure is <dfn>determined</dfn> when everyone who brings the same given sees the same figure, and nothing else enters it.</p>
+<p class="used">Used in every proposition: <a href="/pile/">I</a>, <a href="/word/">II</a>, <a href="/minute/">III</a>, <a href="/grain/">IV</a>, <a href="/sentence/">V</a>, <a href="/sum/">VI</a>.</p></div>
+<figure class="df"><canvas id="f1" width="1" height="1" role="img" aria-label="The word given spelled out as the ant's colours, one shade a letter."></canvas><figcaption>Fig. 1. The given <i>given</i>, read as Proposition II reads a word: one shade for each letter, the vowels <span class="v">underlined</span>.</figcaption></figure></li>
+
+<li id="d2"><div class="dt"><p><span class="dn">2.</span> A <dfn>grid</dfn> is a plane ruled into squares. The <dfn>neighbours</dfn> of a square are the four that share a side with it; the squares that touch it only at a corner are not its neighbours.</p>
+<p class="used">Used in <a href="/pile/">I</a>, <a href="/word/">II</a>, <a href="/sum/">VI</a>.</p></div>
+<figure class="df"><canvas id="f2" width="1" height="1" role="img" aria-label="A grid of seven by seven squares, the middle one in ink and its four neighbours in grey."></canvas><figcaption>Fig. 2. A square, in ink, and its four neighbours.</figcaption></figure></li>
+
+<li id="d3"><div class="dt"><p><span class="dn">3.</span> A <dfn>heap</dfn> is a number of grains laid on each square of a grid. A heap is a <dfn>pile</dfn>, or <dfn>at rest</dfn>, when no square holds four or more.</p>
+<p>The <dfn>pile of a day</dfn> is what that day&rsquo;s grains make, counting one for 1 January 1970 and one more for each day after it, all dropped on one square and toppled (Definition 4) until they rest.</p>
+<p class="used">Used in <a href="/pile/">I</a>, <a href="/sum/">VI</a>, <a href="/tables/">Tables</a>.</p></div>
+<figure class="df"><canvas id="f3" width="1" height="1" role="img" aria-label="A small diamond-shaped sandpile in shades of grey."></canvas><figcaption id="c3">Fig. 3.</figcaption></figure></li>
+
+<li id="d4"><div class="dt"><p><span class="dn">4.</span> To <dfn>topple</dfn> a square that holds four grains or more is to take four from it and give one to each of its neighbours. The grid of the sandpile is ruled as far as the grains reach, so no grain is ever lost over an edge.</p>
+<p class="used">Used in <a href="/pile/">I</a>, <a href="/sum/">VI</a>, <a href="/tables/#mod4">Tables</a>.</p></div>
+<figure class="df"><canvas id="f4" width="1" height="1" role="img" aria-label="Two small grids: a square holding four grains, and the same square after toppling, empty, with one grain on each neighbour."></canvas><figcaption>Fig. 4. Four grains on one square, and the same square toppled.</figcaption></figure></li>
+
+<li id="d5"><div class="dt"><p><span class="dn">5.</span> The <dfn>avalanche</dfn> of a grain is every square that toppling sets going when that grain falls on a pile, until the pile rests again. Its size is the number of squares toppled, each counted once.</p>
+<p class="used">Used in <a href="/pile/">I</a>, <a href="/tables/#t1">Tables</a>.</p></div>
+<figure class="df"><canvas id="f5" width="1" height="1" role="img" aria-label="The same small pile with the squares its last grain toppled marked in blue."></canvas><figcaption id="c5">Fig. 5.</figcaption></figure></li>
+
+<li id="d6"><div class="dt"><p><span class="dn">6.</span> The <dfn>odometer</dfn> of a heap is the count, for every square, of how many times it topples before the heap rests. It does not depend on the order in which the squares are toppled.</p>
+<p class="used">Used in <a href="/sum/">VI</a>.</p></div>
+<figure class="df"><canvas id="f6" width="1" height="1" role="img" aria-label="A round map in greys, darkest at the middle, of how often each square toppled."></canvas><figcaption id="c6">Fig. 6.</figcaption></figure></li>
+
+<li id="d7"><div class="dt"><p><span class="dn">7.</span> An <dfn>ant</dfn> is a walker on a grid that, at every step, reads its square, turns a quarter left or right as the square tells it, changes the square to the next shade, and steps forward one square. Its <dfn>rule</dfn> is the list of turns, one for each shade.</p>
+<p class="used">Used in <a href="/word/">II</a>, <a href="/tables/#t5">Tables</a>.</p></div>
+<figure class="df"><canvas id="f7" width="1" height="1" role="img" aria-label="The squares an ant has turned after a few hundred steps, with its place in blue."></canvas><figcaption id="c7">Fig. 7.</figcaption></figure></li>
+
+<li id="d8"><div class="dt"><p><span class="dn">8.</span> A <dfn>generator</dfn> is a rule that gives each number from the one before it, made so that the numbers it gives look like chance. A <dfn>run</dfn> is the numbers it gives from a given start, in order. The number a generator gives from another is that number&rsquo;s <dfn>successor</dfn>.</p>
+<p class="used">Used in <a href="/minute/">III</a>, <a href="/grain/">IV</a>, <a href="/tables/#t3">Tables</a>.</p></div>
+<figure class="df"><canvas id="f8" width="1" height="1" role="img" aria-label="A run of numbers drawn as points by height, wandering and then settling into four repeated heights."></canvas><figcaption id="c8">Fig. 8.</figcaption></figure></li>
+
+<li id="d9"><div class="dt"><p><span class="dn">9.</span> A <dfn>round</dfn> is a part of a run that comes back to where it began and so repeats without end. The <dfn>tail</dfn> is the part of the run before the round. Every run of a generator with finitely many numbers ends in a round.</p>
+<p class="used">Used in <a href="/minute/">III</a>, <a href="/tables/#t3">Tables</a>.</p></div>
+<figure class="df"><canvas id="f9" width="1" height="1" role="img" aria-label="Six numbers joined by arrows: a tail of two in blue leading into a round of four in ink."></canvas><figcaption id="c9">Fig. 9.</figcaption></figure></li>
+
+<li id="d10"><div class="dt"><p><span class="dn">10.</span> A <dfn>multiplier</dfn> is the number by which a multiplicative generator multiplies, before it divides by its fixed <dfn>divisor</dfn> and keeps the remainder. The <dfn>lattice</dfn> of a multiplier is the set of points with a number across and its successor up; it lies on parallel lines, and the <dfn>shortest step</dfn> is the shortest distance from one of its points to another.</p>
+<p class="used">Used in <a href="/grain/">IV</a>, <a href="/tables/#c4">Tables</a>.</p></div>
+<figure class="df"><canvas id="f10" width="1" height="1" role="img" aria-label="A square of dots that lie on parallel slanting rows."></canvas><figcaption id="c10">Fig. 10.</figcaption></figure></li>
+
+<li id="d11"><div class="dt"><p><span class="dn">11.</span> A <dfn>walk</dfn> is drawn by a pen that, for each word of a sentence, goes forward as many units as the word has letters and then turns right by a fixed part of a full turn. A <dfn>reading</dfn> is one pass through the sentence. A walk <dfn>closes</dfn> when, at the end of some reading, the pen is home and faces the way it began.</p>
+<p class="used">Used in <a href="/sentence/">V</a>.</p></div>
+<figure class="df"><canvas id="f11" width="1" height="1" role="img" aria-label="A walk of three words at quarter turns, which closes after four readings."></canvas><figcaption id="c11">Fig. 11.</figcaption></figure></li>
+</ol>
+
+<h2>Index of terms</h2>
+<p class="intro">Each term with the definition that fixes it and the propositions that use it.</p>
+<table class="tab idx">
+<thead><tr><th>Term</th><th class="r">Def.</th><th>Used in</th></tr></thead>
+<tbody id="index"></tbody>
+</table>
+
+<section class="notes">
+<h2>Notes</h2>
+<p id="n1">1. Euclid, <i>The Thirteen Books of Euclid&rsquo;s Elements</i>, translated by T. L. Heath (Cambridge, 1908), Book I, Definitions 1 and 2. Public domain.</p>
+<p id="n2">2. The figures are drawn by this page&rsquo;s own rules, <a href="defs.js">defs.js</a>, which are the rules of the propositions cut down to a few squares or a small divisor. Fig. 10 uses the divisor 257 in place of the Spectrum&rsquo;s 65,537, so that its rows can be seen.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="defs.js"></script>
+</body>
+</html>

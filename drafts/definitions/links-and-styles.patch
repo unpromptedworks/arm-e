@@ -1,0 +1,101 @@
+diff --git a/public/grain/index.html b/public/grain/index.html
+index 1d8f926..9655ac8 100644
+--- a/public/grain/index.html
++++ b/public/grain/index.html
+@@ -36,7 +36,7 @@
+ </figure>
+ 
+ <h2>Construction</h2>
+-<p>Let the number be divided by 65,537, and let its remainder be the <i>multiplier</i>. Let any number from 1 to 65,536 be multiplied by it and divided again by 65,537, and let the remainder be that number&rsquo;s successor; let the successor be treated the same way, and so on. This is the rule of the ZX Spectrum, whose manual gives the multiplier 75 and the divisor 65,537, and whose <span class="sc">RND</span> is this rule, shifted by one, divided down to a fraction.<sup><a href="#n1">1</a></sup> It is the plainest of the <i>multiplicative congruential</i> rules, for decades the commonest way for a computer to make chance.</p>
++<p>Let the number be divided by 65,537, and let its remainder be the <a href="/definitions/#d10"><i>multiplier</i></a>. Let any number from 1 to 65,536 be multiplied by it and divided again by 65,537, and let the remainder be that number&rsquo;s successor; let the successor be treated the same way, and so on. This is the rule of the ZX Spectrum, whose manual gives the multiplier 75 and the divisor 65,537, and whose <span class="sc">RND</span> is this rule, shifted by one, divided down to a fraction.<sup><a href="#n1">1</a></sup> It is the plainest of the <i>multiplicative congruential</i> rules, for decades the commonest way for a computer to make chance.</p>
+ <p>Let a square be ruled, and for every number let a dot be set with the number across and its successor up. Fig. 1 lays the dots down in the order the rule gives them, starting from 1, so that the square fills as the machine runs. Fig. 2 takes the middle of the square and magnifies it until single dots can be told apart; the grey lines are drawn through them along the shortest step from one dot to another, and the shortest step is drawn in solid blue, and the shortest that does not run the same way in broken blue. Fig. 1 is drawn at the screen&rsquo;s own pixels, each as dark as the dots that fall in it; where the rows are finer than a pixel, the eye sees only a grey.</p>
+ 
+ <h2>Demonstration</h2>
+diff --git a/public/index.html b/public/index.html
+index 7dae4c8..29e69bc 100644
+--- a/public/index.html
++++ b/public/index.html
+@@ -42,6 +42,7 @@
+   <li><span class="n">VI.</span><a href="/sum/"><span class="t">The sum of two days</span><span class="e">Two days&rsquo; piles laid one on the other, resting as the pile of a third.</span></a></li>
+ </ol>
+ <ol class="contents back">
++  <li><span class="n"></span><a href="/definitions/"><span class="t">Definitions</span><span class="e">The terms of the book, each shown by a figure, with an index of where each is used.</span></a></li>
+   <li><span class="n"></span><a href="/tables/"><span class="t">Tables</span><span class="e">Every case of the rules worked and sorted, with the pile&rsquo;s records forecast to 2099.</span></a></li>
+ </ol>
+ </main>
+diff --git a/public/minute/index.html b/public/minute/index.html
+index f2cc3b4..b92cb49 100644
+--- a/public/minute/index.html
++++ b/public/minute/index.html
+@@ -42,7 +42,7 @@
+ 
+ <h2>Construction</h2>
+ <p>Let the minute be read as a number of four figures, the hour and then the minutes, so that a quarter to four in the afternoon is 1545. Let it be squared, the square written out in eight figures with noughts in front if it is short, and the middle four kept. Thus 1545 squared is 02387025, and the middle four are 3870. Let the same be done to 3870, and so on, until a number comes that has come before. This is the <i>middle-square</i> rule, which John von Neumann put forward in 1949 as a way for a computing machine to make its own random digits.<sup><a href="#n1">1</a></sup></p>
+-<p>Let a dial be drawn for the day, midnight at the top and noon at the bottom, and let each of its 1,440 minutes put out a spoke, as long as the number of steps that minute takes before it falls into a run that repeats: a <i>round</i>. Let the spokes of minutes that fall to nought, after which the rule gives nothing but nought, be grey. Fig. 2 follows the given minute&rsquo;s run step by step, the height of each point being the number reached, in blue while it wanders and in ink once the round has begun.</p>
++<p>Let a dial be drawn for the day, midnight at the top and noon at the bottom, and let each of its 1,440 minutes put out a spoke, as long as the number of steps that minute takes before it falls into a run that repeats: a <a href="/definitions/#d9"><i>round</i></a>. Let the spokes of minutes that fall to nought, after which the rule gives nothing but nought, be grey. Fig. 2 follows the given minute&rsquo;s run step by step, the height of each point being the number reached, in blue while it wanders and in ink once the round has begun.</p>
+ <p>Von Neumann himself worked with numbers of many more figures. Four figures are taken here because a clock shows four, and because ten thousand numbers can be followed to the end.<sup><a href="#n1">1</a></sup></p>
+ 
+ <h2>Demonstration</h2>
+diff --git a/public/pile/index.html b/public/pile/index.html
+index 4e3b716..5de1426 100644
+--- a/public/pile/index.html
++++ b/public/pile/index.html
+@@ -44,7 +44,7 @@
+ </div>
+ 
+ <h2>Construction</h2>
+-<p>Let a grid of squares be ruled, and let every grain fall on the middle square. Whenever a square holds four grains or more, let it give one grain to each of its four neighbours, and let this go on until no square holds four. Each such giving is a <i>toppling</i>, and the topplings one new grain sets going are its <i>avalanche</i>. This is the sandpile of Bak, Tang and Wiesenfeld.<sup><a href="#n1">1</a></sup></p>
++<p>Let a grid of squares be ruled, and let every grain fall on the middle square. Whenever a square holds four grains or more, let it give one grain to each of its four neighbours, and let this go on until no square holds four. Each such giving is a <a href="/definitions/#d4"><i>toppling</i></a>, and the topplings one new grain sets going are its <a href="/definitions/#d5"><i>avalanche</i></a>. This is the sandpile of Bak, Tang and Wiesenfeld.<sup><a href="#n1">1</a></sup></p>
+ <p>Let the grains be counted by the calendar: one for the first of January 1970, and one more for each day after it, reckoned in Greenwich time. The figure shows the pile at rest once the day&rsquo;s grain has fallen, with the squares that grain toppled marked in blue. On a day whose grain topples nothing, let the next days&rsquo; grains be dropped in advance until one of them does, and let the squares that grain will topple be outlined in blue. An avalanche too small to see at this scale is ringed.</p>
+ 
+ <h2>Demonstration</h2>
+diff --git a/public/style.css b/public/style.css
+index 511de1e..b682162 100644
+--- a/public/style.css
++++ b/public/style.css
+@@ -129,3 +129,19 @@ ol.contents.back { margin-top: 1.4rem; }
+ .row.two { grid-template-columns: repeat(2, 1fr); max-width: 34rem; }
+ figure .row { margin-bottom: 0; }
+ .given .pair { white-space: nowrap; }
++ol.defs { list-style: none; padding: 0; margin: 1.6rem 0 0; }
++ol.defs > li { display: grid; grid-template-columns: 1fr 11rem; gap: 0 1.4rem; align-items: start; padding: 1.1rem 0 0.4rem; border-top: 1px solid var(--g2); scroll-margin-top: 1rem; }
++ol.defs > li:target { border-top-color: var(--mark); }
++ol.defs .dn { letter-spacing: 0.12em; margin-right: 0.2em; }
++ol.defs dfn { font-style: italic; }
++ol.defs .used { font-size: 0.95rem; color: var(--quiet); }
++figure.df { margin: 0.3rem 0 1rem; }
++figure.df canvas { border: 1px solid var(--g1); }
++figure.df figcaption { font-size: 0.85rem; text-align: left; hyphens: none; }
++figure.df .v { text-decoration: underline; text-decoration-color: var(--mark); }
++table.idx td:last-child { font-size: 0.95rem; color: var(--quiet); }
++p.intro { color: var(--quiet); font-style: italic; }
++@media (max-width: 34rem) {
++  ol.defs > li { grid-template-columns: 1fr; }
++  figure.df { max-width: 16rem; margin: 0 auto 1rem; }
++}
+diff --git a/public/sum/index.html b/public/sum/index.html
+index 33efc3b..8e14055 100644
+--- a/public/sum/index.html
++++ b/public/sum/index.html
+@@ -69,7 +69,7 @@
+ <section class="notes">
+ <h2>Notes</h2>
+ <p id="n1">1. Deepak Dhar, &ldquo;Self-organized critical state of sandpile automaton models,&rdquo; <i>Physical Review Letters</i> 64 (1990), 1613&ndash;1616. See also <a href="https://en.wikipedia.org/wiki/Abelian_sandpile_model">&ldquo;Abelian sandpile model,&rdquo; Wikipedia</a>, where the same addition of piles, on a finite grid that loses grains at its edge, makes the sandpile group.</p>
+-<p id="n2">2. The number of topplings at each square, the <i>odometer</i>, is the same for every order of toppling; this is the &ldquo;least action principle&rdquo; of Anne Fey, Lionel Levine and Yuval Peres, &ldquo;Growth rates and explosions in sandpiles,&rdquo; <i>Journal of Statistical Physics</i> 138 (2010), 143&ndash;159. The counts above were made by this page&rsquo;s own rule.</p>
++<p id="n2">2. The number of topplings at each square, the <a href="/definitions/#d6"><i>odometer</i></a>, is the same for every order of toppling; this is the &ldquo;least action principle&rdquo; of Anne Fey, Lionel Levine and Yuval Peres, &ldquo;Growth rates and explosions in sandpiles,&rdquo; <i>Journal of Statistical Physics</i> 138 (2010), 143&ndash;159. The counts above were made by this page&rsquo;s own rule.</p>
+ </section>
+ </main>
+ <footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+diff --git a/public/word/index.html b/public/word/index.html
+index 922a2f3..5d5cda8 100644
+--- a/public/word/index.html
++++ b/public/word/index.html
+@@ -33,7 +33,7 @@
+ <div class="key" id="key" aria-hidden="true"></div>
+ 
+ <h2>Construction</h2>
+-<p>Let the word be stripped to its letters, at most twelve, and let each letter stand for one shade, from the bare ground for the first letter to full ink for the last. Let every square of a grid 257 squares on a side begin in the first shade, and let an ant stand on the middle square facing up.</p>
++<p>Let the word be stripped to its letters, at most twelve, and let each letter stand for one shade, from the bare ground for the first letter to full ink for the last. Let every square of a grid 257 squares on a side begin in the first shade, and let an <a href="/definitions/#d7">ant</a> stand on the middle square facing up.</p>
+ <p>At each step the ant reads the shade of its square. If that shade&rsquo;s letter is a vowel, it turns a quarter left; if a consonant, a quarter right. It then moves the square on to the next shade, the last shade returning to the first, and steps forward one square. The grid is closed on itself, so an ant that walks off one edge comes back on the opposite one. Let it take 400,000 steps. The figure shows the smallest square of grid that holds everything the ant has reached so far.</p>
+ <p>With the word <i>la</i>, a consonant and then a vowel, this is Langton&rsquo;s ant;<sup><a href="#n1">1</a></sup> longer words give the many-coloured ants of Turk and Propp.<sup><a href="#n2">2</a></sup></p>
+ 
