@@ -1,0 +1,22 @@
+diff --git a/scripts/check.mjs b/scripts/check.mjs
+index f8f3142..7628eca 100644
+--- a/scripts/check.mjs
++++ b/scripts/check.mjs
+@@ -37,6 +37,17 @@ for (const p of pages) {
+     if (!existsSync(t)) { console.error(`${p}: broken local link ${m[1]}`); bad++; }
+   }
+ }
++// Cross-references: every link to a fragment, on this page or another,
++// must name an id that the target page has.
++const ids = (f) => new Set([...readFileSync(f, "utf8").matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
++for (const p of pages) {
++  const s = readFileSync(p, "utf8");
++  for (const m of s.matchAll(/href="(\/[^"#?]*)?(?:\?[^"#]*)?#([^"]+)"/g)) {
++    let t = m[1] ? join(ROOT, m[1]) : p;
++    if (m[1] && m[1].endsWith("/")) t = join(t, "index.html");
++    if (existsSync(t) && !ids(t).has(m[2])) { console.error(`${p}: link to missing #${m[2]} in ${t}`); bad++; }
++  }
++}
+ const headers = existsSync(join(ROOT, "_headers")) ? readFileSync(join(ROOT, "_headers"), "utf8") : "";
+ if (!/X-Robots-Tag: noindex/.test(headers)) { console.error("_headers: missing X-Robots-Tag"); bad++; }
+ for (const f of ["favicon.svg", "og.png"]) if (!existsSync(join(ROOT, f))) { console.error(`missing ${f}`); bad++; }

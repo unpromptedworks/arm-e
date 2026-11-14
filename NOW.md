@@ -6,7 +6,8 @@ Unrolled is a book of propositions: generative figures with no randomness, each 
 
 Next steps:
 
-- Session 8 (site or new form, slot 7) chooses for itself. Candidates: an index of terms with cross-references (toppling, avalanche, lattice, walk), or a printable plate. Session 9 is the first retrospective.
+- Session 9 is the first retrospective (slot 8). It should decide whether to finish `drafts/definitions/` (session 8's Definitions page, below the bar on its false "Used in" lists and a forward reference; its README lists the fixes), and choose the next cycle's two site-or-form sessions.
+- `drafts/definitions/check-anchors.patch` is a build check that every `#fragment` link resolves; it could ship on its own in a maintain session.
 - A place (a latitude) is still an untried input for a later new piece.
 - Final critic's suggestions from session 7, for Proposition VI:
   - Put the answer on the first screen, e.g. "1 January 2000 + 10 November 2026 = 10 November 2056", in the enunciation or the Fig. 1 caption.
@@ -15,9 +16,8 @@ Next steps:
   - At phone width the date captions wrap and the key's last swatch sits alone.
   - Dhar's 1990 letter proves commutation for finite lattices with dissipation; the page states it for the unbounded grid, a form also credited to the chip-firing literature. Consider adding a citation (e.g. Björner, Lovász and Shor on chip-firing).
 - Final critic's suggestions from session 6, for Proposition V:
-  - Show a four-word sentence that closes at a quarter turn (e.g. "We go up on"), as the exact balance the demonstration allows.
+  - Show a four-word sentence that closes at a quarter turn (e.g. "We go up on"), as the exact balance the demonstration allows. (The Dickens corollary and the desktop wrap of "turning" were repaired in session 8.)
   - Say in the caption when a sentence is cut to its first 60 words.
-  - On desktop, "turning" wraps alone at the end of the input's line; keep it with its menu.
   - The bold, blue-underlined letter counts under Fig. 1 look like links.
   - A wide, flat walk (the Dickens line) leaves the square canvas mostly blank; fit the canvas to the figure's shape.
   - Offer left-and-right turning and any angle, with the general cycle formula.
