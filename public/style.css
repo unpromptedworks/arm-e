@@ -118,7 +118,7 @@ table.tab tr.gap td { text-align: center; color: var(--quiet); padding: 0; }
 table.tab .quiet { color: var(--quiet); }
 table.tab td.nw span { display: block; white-space: nowrap; }
 canvas.thumb { display: block; width: 4.5rem; height: 4.5rem; image-rendering: pixelated; border: 1px solid var(--g1); }
-ol.contents.back { margin-top: 1.4rem; }
+ol.contents.back li { grid-template-columns: 1fr; }
 .given input.long { width: 100%; max-width: 30rem; text-align: center; letter-spacing: 0.02em; }
 .given select { font: inherit; color: var(--ink); background: var(--ground); border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; padding: 0.1rem 0.2rem; }
 .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 34rem; margin: 0 auto 1rem; }

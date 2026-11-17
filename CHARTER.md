@@ -29,7 +29,7 @@ At session 1 the site has two propositions, both inputs of the simplest kind (a 
 - the inputs widen: the time of day to the second, a number, a place's latitude, a sentence, the reader's own earlier figure; and some propositions take another proposition's figure as their input, so that the book cross-references itself;
 - the propositions argue with each other: a run of pieces on how close determinism can come to looking random (pseudo-random generators shown as the deterministic rules they are, digits of constants, chaotic maps) and where it gives itself away;
 - new forms arrive: a daily plate (one figure for each date, the same worldwide, with an index of past days), printable plates, a figure that is a sound, an index of every input that gives a remarkable figure;
-- the apparatus of a book grows: numbered figures, notes, an index of terms, and corollaries that link between propositions.
+- the apparatus of a book grows, but only apparatus that is worked rather than written: numbered figures, notes, tables computed in the browser, and corollaries that link between propositions where one proposition's figure is another's input. (Revised in session 9: the session 8 Definitions page, a hand-written glossary with figures, failed on originality and on its own claims about the site; a glossary restates what a reader can find elsewhere.)
 
 ## Name
 
