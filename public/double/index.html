@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposition VII. The doubling of a fraction — Unrolled</title>
+<meta name="description" content="Any fraction, doubled again and again. Worked exactly it comes round for ever; worked by the reader's own computer it is nothing within 1,074 doublings, though the computer never rounds once.">
+<meta property="og:title" content="Proposition VII. The doubling of a fraction">
+<meta property="og:description" content="A fraction doubled for ever comes round for ever. The same fraction doubled by a computer is nothing within 1,074 doublings, and the computer never rounds once.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Proposition VII</p>
+<h1>The doubling of a fraction</h1>
+<p class="enunciation">Given any fraction, to double it again and again, keeping only what lies after the point, and to show that it comes round for ever unless its denominator is a power of two, while the same fraction doubled by a computer is nothing within 1,074 doublings, though the computer never once rounds.</p>
+
+<form class="given" id="given">
+  <label for="frac">Given the fraction</label>
+  <input type="text" id="frac" maxlength="24" autocomplete="off" spellcheck="false" inputmode="decimal">
+  <button type="submit">Double</button>
+</form>
+<p class="run" id="note"></p>
+
+<figure>
+  <div class="row two">
+    <div class="cell"><canvas id="true" role="img" aria-label="The binary digits of the fraction and its doubles, one double to a row."></canvas><span>the fraction</span></div>
+    <div class="cell"><canvas id="mach" role="img" aria-label="The binary digits of the computer's copy of the fraction and its doubles, its wrong digits in blue."></canvas><span>the machine&rsquo;s fraction</span></div>
+  </div>
+  <figcaption id="caption">Fig. 1.</figcaption>
+</figure>
+<div class="key" aria-hidden="true">
+  <span style="--sw: var(--ink)">digit 1</span>
+  <span style="--sw: var(--ground)">digit 0</span>
+  <span style="--sw: var(--g1)">past the first wrong digit</span>
+  <span style="--sw: var(--mark)">a wrong digit</span>
+</div>
+<p class="run" id="run"></p>
+
+<h2>Construction</h2>
+<p>Let the fraction be written in binary, as a point followed by a row of ones and noughts, so that one half is .1, one quarter .01 and one tenth .000110011001100&hellip;, the four digits 1100 repeating for ever. Let it be doubled, and if the double is one or more, let one be taken away. In binary, doubling moves every digit one place to the left, and taking away one strikes out the digit that has crossed the point; so each double is the row before it with its first digit gone.</p>
+<p>Let the doubles be set one under another, the first sixty-four digits of each, or more where the machine&rsquo;s copy runs longer, so that the figure is as tall as it is wide. Since each row is the last moved one place left, every digit runs down the figure on a slant from right to left. Let this be done twice: once with the fraction itself, by whole numbers, and once with the number the reader&rsquo;s own computer makes of it, a double-precision number, doubled by the computer&rsquo;s own arithmetic.</p>
+
+<h2>Demonstration</h2>
+<p>Let the fraction be <i>p</i>/<i>q</i> in its lowest terms. Each double is again some whole number less than <i>q</i>, over <i>q</i>, and there are only <i>q</i> of those; so sooner or later a double comes back, and since each double fixes the next, everything after it comes back too. Let <i>q</i> be two multiplied by itself <i>s</i> times, multiplied by an odd number <i>r</i>. Each of the first <i>s</i> doublings cancels a two from the denominator, and after them the denominator is <i>r</i>. If <i>r</i> is one, that double is nought, and nought doubles to nought for ever. If <i>r</i> is more than one, no two fractions over <i>r</i> double to the same fraction, because, <i>r</i> being odd, a double over <i>r</i> can be halved again in exactly one way; so the doubles from then on run round a circle, and come back to where they joined it after <i>t</i> doublings, where <i>t</i> is the fewest times 2 can be multiplied by itself so that, less one, it is a multiple of <i>r</i>.</p>
+<p>The computer cannot hold <i>p</i>/<i>q</i> unless <i>r</i> is one. A double-precision number is a whole number of at most 53 binary digits multiplied by a power of a half, and the smallest power it allows is 2<sup>&minus;1074</sup>;<sup><a href="#n1">1</a></sup> so every number it holds between nought and one is a whole number over 2<sup><i>k</i></sup>, with <i>k</i> no more than 1,074. That is a fraction whose <i>r</i> is one. By what was just shown, its doubles are nought after exactly <i>k</i> doublings, if <i>k</i> is taken as small as it can be.</p>
+<p>Nor does the computer go wrong on the way. Doubling a binary number only raises its power of two, which is exact. Taking one away from a number between one and two is exact also, by Sterbenz&rsquo;s lemma: when two numbers the machine holds are each no more than twice the other, their difference is a number it holds.<sup><a href="#n2">2</a></sup> So every row of the machine&rsquo;s panel is the true double of the row above it. Its one error is the first row, where <i>p</i>/<i>q</i> was replaced by the nearest fraction over a power of two, and that error, too small to see in the fifty-third digit or so, is doubled with everything else until it reaches the point.</p>
+<p class="therefore">Therefore the fraction, if its denominator has an odd part, comes round for ever, and the machine&rsquo;s copy of the same fraction comes to nought, by doublings each of which is exactly right, after as many as the power of two in its denominator: never more than 1,074, and for any fraction that can be typed here, fewer than eighty.</p>
+<p class="qed">Which was to be shown.</p>
+
+<h2>Corollaries</h2>
+<p>One tenth, at the head of this page, has a denominator of two times five. After one doubling it is one fifth, and from there it runs round one fifth, two fifths, four fifths and three fifths, four doublings to the round, for ever. The machine holds instead 3,602,879,701,896,397/2<sup>55</sup>, a little more than one tenth,<sup><a href="#n3">3</a></sup> and its doubles are nought after the 55th. <a href="?f=1%2F3">One third</a> runs between one third and two thirds; the machine&rsquo;s is nought after 54. <a href="?f=3%2F8">Three eighths</a> is held exactly, and both panels empty together after three.</p>
+<p><a href="?f=1%2F101">One part in a hundred and one</a> goes round in a hundred doublings, the most a denominator of 101 allows, and its digits look like noise; it is still a single round, the same for everyone. The machine&rsquo;s copy keeps with it, to the eye, for 57 doublings, parts from it at the 58th and is nought at the 59th. The last blue rings in Fig. 2 are not the machine losing its way: they are the digits it supplied when it rounded, come up into view.</p>
+<p>The longest-lived number the machine holds is 2<sup>&minus;1074</sup> itself, which is nought after 1,074 doublings. When the doubling map is worked from a number cut short, as it must be in any machine, it comes to rest at nought &ldquo;regardless of the true iterate values&rdquo;.<sup><a href="#n4">4</a></sup> What the demonstration adds is that the cause is not the machine&rsquo;s rounding as it goes, for it never rounds; it is that the machine can hold no fraction that comes round. Von Neumann&rsquo;s middle-square runs in <a href="/minute/">Proposition III</a> end either in a round or in nought; here, worked by a machine, only one of those endings is possible.</p>
+
+<h2>Fig. 2</h2>
+<figure>
+  <canvas id="fig2c" class="smooth" width="900" height="380" role="img" aria-label="The value of each double, the fraction's and the machine's, plotted against the number of doublings."></canvas>
+  <figcaption id="caption2">Fig. 2.</figcaption>
+</figure>
+
+<section class="notes">
+<h2>Notes</h2>
+<p id="n1">1. IEEE 754 double precision: a 53-digit significand, and subnormal numbers down to 2<sup>&minus;1074</sup>. See <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">&ldquo;Double-precision floating-point format,&rdquo; Wikipedia</a>. A fraction typed here may have a denominator of up to ten million.</p>
+<p id="n2">2. Pat H. Sterbenz, <i>Floating-Point Computation</i> (Prentice-Hall, 1974). See <a href="https://en.wikipedia.org/wiki/Sterbenz_lemma">&ldquo;Sterbenz lemma,&rdquo; Wikipedia</a>: if <i>y</i>/2 &le; <i>x</i> &le; 2<i>y</i>, then <i>x</i> &minus; <i>y</i> is a floating-point number. Here <i>y</i> is one.</p>
+<p id="n3">3. The Python tutorial, <a href="https://docs.python.org/3/tutorial/floatingpoint.html">&ldquo;Floating-Point Arithmetic: Issues and Limitations&rdquo;</a>, gives the same fraction for one tenth. The digits in Fig. 1 are read from the 64 bits of the number the reader&rsquo;s browser makes of <i>p</i>/<i>q</i>, and the fraction&rsquo;s are worked by long division in whole numbers.</p>
+<p id="n4">4. <a href="https://en.wikipedia.org/wiki/Dyadic_transformation">&ldquo;Dyadic transformation,&rdquo; Wikipedia</a>, section on the loss of information, which also notes that a rational starting point is eventually periodic, and one with a finite binary expansion of <i>k</i> digits reaches nought after <i>k</i>.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="double.js"></script>
+</body>
+</html>
