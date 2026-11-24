@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposition VIII. The shadow of a stick — Unrolled</title>
+<meta name="description" content="A stick upright on level ground, at the reader's latitude. The tip of its shadow draws a conic section every day: a hyperbola where the sun sets, an ellipse where it does not, and on the equinox a straight line, everywhere on earth but the poles.">
+<meta property="og:title" content="Proposition VIII. The shadow of a stick">
+<meta property="og:description" content="The tip of a stick's shadow draws a conic every day: a hyperbola where the sun sets, an ellipse where it does not, and on the equinox a straight line, everywhere on earth but the poles.">
+<meta property="og:image" content="https://unrolled.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="name" href="/">Unrolled</a></header>
+<main>
+<p class="prop-no">Proposition VIII</p>
+<h1>The shadow of a stick</h1>
+<p class="enunciation">Given a place and a day, to trace the tip of the shadow of an upright stick from sunrise to sunset, and to show that it is a section of a cone: a hyperbola wherever the sun rises and sets, an ellipse wherever it does not set, and on the day of an equinox, at every place on earth but the poles, a straight line.</p>
+
+<form class="given" id="given">
+  <label for="lat">Given the latitude</label>
+  <input type="text" id="lat" maxlength="8" autocomplete="off" spellcheck="false" inputmode="decimal">
+  <label for="date">and the day</label>
+  <input type="date" id="date">
+  <button type="submit">Trace</button>
+  <button type="button" id="here">This place</button>
+</form>
+<p class="run" id="note"></p>
+
+<figure>
+  <canvas id="fig1" class="smooth" role="img" aria-label="The ground round the foot of the stick, seen from above, with the path of the shadow's tip on each week of the year and the given day's path in blue."></canvas>
+  <figcaption id="caption">Fig. 1.</figcaption>
+</figure>
+<div class="key" aria-hidden="true">
+  <span style="--sw: var(--mark)">the given day</span>
+  <span style="--sw: var(--ink)">solstices and equinox</span>
+  <span style="--sw: var(--g2)">every seventh day</span>
+</div>
+<p class="run" id="latnote">Degrees north; south as less than nought. The longitude is not asked for, because, as the demonstration shows, it changes nothing.</p>
+
+<h2>Construction</h2>
+<p>Let a stick of unit height stand upright on level ground at the given latitude, and let the ground be seen from above, north at the top. Let the sun be set at the declination it has at noon, Greenwich time, on the given day: its angle north or south of the celestial equator, worked by the Naval Observatory&rsquo;s formula.<sup><a href="#n1">1</a></sup> Let it be carried once round the sky at that declination, a quarter of a degree of hour angle at a time, and wherever it is above the horizon let the line from the sun through the tip of the stick be drawn on to the ground. The points where those lines meet the ground are the day&rsquo;s path, drawn in blue.</p>
+<p>Let the same be done for every seventh day of the year, in grey, for the two solstices and the equinox, in black, and, for each whole hour of solar time, for every declination the sun takes in a year, in broken lines.</p>
+
+<h2>Demonstration</h2>
+<p>In a day the sky turns once about the line of the earth&rsquo;s axis, and the sun, its declination held, keeps the same angle to that axis all day: a right angle less its declination. So every line from the sun through the tip of the stick makes that one angle with the line through the tip parallel to the axis, and all of them lie on a single cone, with its vertex at the tip and that line for its axis. The shadow&rsquo;s path is where the ground cuts the cone. It is therefore a section of a cone, in Apollonius&rsquo;s sense.<sup><a href="#n2">2</a></sup></p>
+<p>The axis meets the ground at an angle equal to the latitude, as the pole star stands as high above the horizon as the place is far from the equator. A plane that cuts a cone at a greater angle to its axis than the cone&rsquo;s own half-angle cuts a closed curve, an ellipse; at an equal angle, a parabola; at a lesser angle, a hyperbola, of which the shadow is the one branch on the side away from the sun. The half-angle is a right angle less the declination; so the path is a hyperbola when the latitude and the declination together make less than a right angle, a parabola when they make exactly one, and an ellipse when they make more. These are the conditions for the sun to set, to graze the horizon at midnight, and not to set, provided the declination lies on the same side of the equator as the place; if it lies on the other side and the two make more than a right angle, the sun does not rise, and there is no shadow. At the pole the axis stands upright, the plane cuts the cone square, and the ellipse is a circle.<sup><a href="#n3">3</a></sup></p>
+<p>When the declination is nought the cone opens out flat, into the plane through the tip parallel to the equator. The ground cuts a plane in a straight line. That line runs due east and west, since the plane of the equator meets the horizon at the east and west points; and its distance from the foot of the stick is the stick&rsquo;s height times the tangent of the latitude, which is the length of the noon shadow.</p>
+<p>The longitude enters nowhere. It moves the hour at which the sun reaches each point of its circle, and so the clock time at which the shadow passes each point of its path, but neither the circle nor the path.</p>
+<p class="therefore">Therefore every place on the same parallel, given the same day, has the same figure; the tip of the shadow draws a hyperbola where the sun rises and sets, a parabola or an ellipse where it does not set, and on the equinox a straight line from west to east, at every latitude where the sun is up.</p>
+<p class="qed">Which was to be shown.</p>
+
+<h2>Corollaries</h2>
+<p>At <a href="?lat=51.48">Greenwich</a>, latitude 51.48&deg;, the equinox line runs 1.256 heights north of the foot. On every day of the year the path is a hyperbola, near the foot in summer, when the sun stands high, and far to the north in winter. Since the sun&rsquo;s declination is never more than 23.44&deg;, the paths of a year all lie between the two solstice hyperbolas, and none of them crosses another.</p>
+<p>The broken hour lines are straight, and they all pass through one point, 0.796 heights south of the foot, where a line through the tip parallel to the earth&rsquo;s axis meets the ground. At one hour of solar time, all the year&rsquo;s lines from the sun through the tip lie in one plane through that axis, and the ground cuts the plane in a straight line. This is the ancient sundial with an upright pin, and why its hour marks can be ruled.</p>
+<p>The grey paths, one a week, crowd together at the solstices and stand apart at the equinoxes. In the week before the June solstice the declination moves less than a fifth of a degree; in the week after the March equinox it moves two and three-quarters. The crowding is the sun&rsquo;s standing still that the word solstice names.</p>
+<p>At <a href="?lat=66.56&amp;d=2026-06-21">the Arctic Circle on the June solstice</a> the two angles make a right angle, to within a hundredth of a degree, and the shadow draws a parabola, the one day in the year when it can. At <a href="?lat=78&amp;d=2026-06-21">Svalbard, 78&deg; north</a>, the path is an ellipse from 22 April to 20 August 2026, a parabola on 21 August, to within a hundredth of a degree, a hyperbola for two months either side, and nothing from 25 October to 16 February, when the sun does not rise. At <a href="?lat=23.44&amp;d=2026-06-21">the Tropic of Cancer</a> on the June solstice the noon shadow is nothing, and the hyperbola passes through the foot of the stick. A place in the south, given a day when the sun&rsquo;s declination is the same but on the other side, has the same figure reflected, north for south.</p>
+
+<h2>Fig. 2</h2>
+<figure>
+  <div class="row" id="fig2"></div>
+  <figcaption>Fig. 2. The June solstice, in blue, and the equinox, in black, at six latitudes, each square five heights of the stick across, except Svalbard&rsquo;s, which is eight across and centred on its ellipse. From the equator to the pole the hyperbola closes, through the parabola at the Arctic Circle, into an ellipse and at last a circle. The equinox line moves north as the latitude rises and is out of sight past 68&deg;; at the pole the equinox sun runs round the horizon and the shadow has no end.</figcaption>
+</figure>
+
+<section class="notes">
+<h2>Notes</h2>
+<p id="n1">1. U.S. Naval Observatory, &ldquo;Approximate Solar Coordinates&rdquo;, which gives the sun&rsquo;s position to about one minute of arc, a sixtieth of a degree, within two centuries of 2000; see <a href="https://en.wikipedia.org/wiki/Position_of_the_Sun">&ldquo;Position of the Sun,&rdquo; Wikipedia</a>, which gives the same formula. The declination is held at its noon value for the whole day; it changes by at most 0.4&deg; in a day, near the equinoxes, so the day&rsquo;s path is a conic only to that degree, and the equinox line is straight only at the instant the declination is nought. Refraction and the width of the sun are left out: the sun is a point and its light runs straight.</p>
+<p id="n2">2. Apollonius of Perga, <i>Conics</i>, Book I, where the ellipse, parabola and hyperbola are defined as sections of a cone. See <a href="https://en.wikipedia.org/wiki/Conic_section">&ldquo;Conic section,&rdquo; Wikipedia</a>.</p>
+<p id="n3">3. The same conditions, as a sign of cos&sup2;&phi; &minus; sin&sup2;&delta;, are worked by vector algebra in a reconstruction of the medieval Arabic formula for a gnomon&rsquo;s shadow: <a href="https://arxiv.org/abs/2510.12913">arXiv:2510.12913</a>. For sundials generally, see <a href="https://en.wikipedia.org/wiki/Sundial">&ldquo;Sundial,&rdquo; Wikipedia</a>, which notes that the shadow tip traces a conic section, a circle at the poles.</p>
+</section>
+</main>
+<footer><a href="/">Contents</a><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="shadow.js"></script>
+</body>
+</html>
