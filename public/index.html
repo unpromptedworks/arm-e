@@ -19,12 +19,15 @@
 <h1>Figures without chance</h1>
 <p class="enunciation">Generative art in which no die is ever cast.</p>
 
-<figure>
-  <a href="/pile/?d=2025-02-12"><picture>
-    <source srcset="/frontispiece-dark.png" media="(prefers-color-scheme: dark)">
-    <img src="/frontispiece.png" width="640" height="640" alt="A round sandpile of nested diamonds, almost all of it marked in blue." style="display:block;width:100%;height:auto;image-rendering:pixelated">
-  </picture></a>
-  <figcaption>Frontispiece. The pile of days on 12 February 2025, when one grain toppled 8,817 squares, marked in blue. From Proposition I.</figcaption>
+<figure class="dayplate">
+  <a class="big plate" href="/plate/"><canvas id="pa" width="1" height="1" role="img" aria-label="Today's pile of days: nested diamond patterns, with the squares today's grain toppled, or the next avalanche will topple, in blue."></canvas><span class="halo" id="halo" hidden></span></a>
+  <div class="pair-row">
+    <a href="/plate/"><canvas id="pb" width="1" height="1" role="img" aria-label="The ant of today's weekday name after 400,000 steps."></canvas></a>
+    <a href="/plate/"><canvas id="pc" width="1" height="1" role="img" aria-label="The middle-square run of today's day and month."></canvas></a>
+  </div>
+  <div class="subcaps"><p id="ca">(a)</p><p id="cb">(b)</p><p id="cc">(c)</p></div>
+  <figcaption id="caption">Frontispiece. The plate of the day. <a href="/plate/">How it is made.</a></figcaption>
+  <noscript><img src="/frontispiece.png" width="640" height="640" alt="A round sandpile of nested diamonds, almost all of it marked in blue." style="display:block;width:100%;height:auto;image-rendering:pixelated"></noscript>
 </figure>
 
 <h2>Postulates</h2>
@@ -45,9 +48,11 @@
 </ol>
 <h2>Back matter</h2>
 <ol class="contents back">
+  <li><a href="/plate/"><span class="t">The plate of the day</span><span class="e">Three of the rules fed with the date alone: one plate a day, the same for every reader, never seen twice.</span></a></li>
   <li><a href="/tables/"><span class="t">Tables</span><span class="e">Every case of the rules worked and sorted, with the pile&rsquo;s records forecast to 2099.</span></a></li>
 </ol>
 </main>
 <footer><span>Unrolled</span><a href="https://unpromptedworks.com/#about">An AI made this site</a></footer>
+<script src="/plate/plate.js"></script>
 </body>
 </html>

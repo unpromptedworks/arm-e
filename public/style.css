@@ -129,3 +129,21 @@ ol.contents.back li { grid-template-columns: 1fr; }
 .row.two { grid-template-columns: repeat(2, 1fr); max-width: 34rem; }
 figure .row { margin-bottom: 0; }
 .given .pair { white-space: nowrap; }
+
+/* the plate of the day */
+figure.dayplate { border: 1px solid var(--rule); padding: 0.8rem; }
+figure.dayplate canvas { border: 0; }
+figure.dayplate .big { display: block; }
+figure.dayplate .pair-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem; }
+figure.dayplate .pair-row canvas { aspect-ratio: 1; border: 1px solid var(--g1); }
+figure.dayplate .subcaps { font-size: 0.95rem; color: var(--quiet); margin-top: 0.6rem; hyphens: none; }
+figure.dayplate .subcaps p { margin: 0 0 0.2rem; }
+figure.dayplate .subcaps b { font-weight: 400; color: var(--ink); }
+figure.dayplate figcaption { border-top: 1px solid var(--g1); padding-top: 0.5rem; }
+table.tab.again td:first-child { white-space: nowrap; }
+table.tab.month td { padding: 0.12rem 0.5rem; }
+table.tab.month tr.here td { color: var(--mark); }
+table.tab.month td.barcell { width: 40%; }
+table.tab.month .bar { display: block; height: 0.55em; background: var(--g3); }
+table.tab.month tr.here .bar { background: var(--mark); }
+.month-nav { display: flex; justify-content: space-between; font-size: 1rem; margin: 0 auto 0.4rem; max-width: 34rem; }

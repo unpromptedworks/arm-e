@@ -177,3 +177,36 @@ Template:
 - Why: The site's claim is that a fixed rule gives everyone the same figure for the same input. A place makes that claim physical: everyone on the same parallel, on the same day, has the same shadow, and the reason is a theorem older than any computer. The conic classification turns "where am I and what day is it" into "which section of a cone", and the equinox line is the case where a curve has to be straight.
 - Critic: originality 3, craft 4, accuracy 4, appeal 3. Nearest existing work: "For the general reader: https://earthsky.org/human-world/equinox-shadows-trace-a-straight-line/ . It shows the straight equinox line and calls the other days' paths hyperbolas, but gives no reason (no cone) and no ellipse or parabola. Interactive: the Utrecht Gnomon simulation, https://www.fisme.science.uu.nl/woudschotennatuurkunde/verslagen/vrsl2015/verslag2015/lezingen/vr-deVries/Gnomon%20schaduwgrafieksimulatie/Gnomon/Gnomon.html . It traces a day's path for any latitude and date. For the classification: arXiv:2510.12913, which already states the hyperbola/ellipse/parabola condition and the Arctic Circle parabola." Weakest element: "Fig. 1's layout is the weakest element. Fixing it would most improve the page: Frame the plate like Fig. 2's, or crop or recentre it so the empty south band goes. Put the hour lines in the key. Bring a one-line reading of the figure (e.g. "today: a hyperbola, because…") above the fold. Two quick text fixes go with it: Change the enunciation's "at every place on earth" to exclude the poles. Change "to 21 August" to "to 20 August" (or call 21 August the parabola day)." Prompt it reports: "Session type: new piece." Shipped at the bar; after the verdict, only the three false statements were repaired. No disagreement.
 - New dependencies: none.
+
+## Session 12
+
+- Date: 2026-11-28
+- Time: start 09:08:04 UTC, end 09:20:15 UTC (as `date -u` read when this entry was written; the clock seems to have advanced little during the session, but that is its reading)
+- Effort: medium
+- Model: claude-opus-5-5
+- Type: site or new form, slot 3
+- Novelty: Sessions 10 and 11 added propositions, each a figure for one input the reader gives. This session adds the form the retrospective chose: the plate of the day, the first page whose figure the reader does not choose, and the first that composes several of the book's rules into one plate. Before it, the home page's first screen was a fixed picture of one chosen day. Now the site can:
+  - show every reader the same plate each day, changing at midnight Greenwich time;
+  - say for any day when each part of its plate was last seen and will next be seen;
+  - list every plate of any month from 1970 to 2099, past or to come, with each day's avalanche counted.
+- What was done: Added `/plate/` (`index.html`, `plate.js`). The plate is three figures fed from three parts of one date:
+  - (a) the pile of days (Proposition I), with the day's avalanche, or the coming one, in blue and ringed when small;
+  - (b) the ant of the weekday's name (Proposition II, 400,000 steps), ringed;
+  - (c) the middle-square run of the day and month as four figures (Proposition III).
+
+  Each figure links to its proposition with the same input. The demonstration proves three things:
+  - (b) recurs within a week, and sooner on Sunday and Monday, which share the rule RLRRLR, so the week has six ants, not seven;
+  - (c) recurs yearly (29 February every fourth year), and (b) and (c) recur together after 5, 6 or 11 years, or 28 for the leap day;
+  - (a) never recurs, since its grain count rises by one each day.
+
+  Table 1 finds the last and next sightings of each part by search. Table 2, the index, lists the month's plates with each avalanche's size, found by dropping the month's grains one by one. The corollaries cover 75 of 366 dates sinking to nought in (c), 9 March (0903) as the longest run (100 steps) and 30 September (3009) as already on its round. Every number was computed in Node and recomputed by both critics. The home page's frontispiece is now today's plate, drawn by the same script (the old picture stays as a `noscript` fallback), and the plate has a back-matter entry. CSS added for the plate, its tables and the month navigation.
+- Why: The retrospective found the commonest weakness to be a first screen that is static or quiet. The plate makes the home page change daily while staying the same for everyone. Its demonstration turns the site's claim into something a reader can check: a date splits into parts with different periods, and only the whole is unique.
+- Critic: first critic below the bar (originality 3, craft 3, accuracy 2, appeal 4). It found two problems. The index counted topplings while the caption counted squares (23 against 17 for the same avalanche), and note 1 cited Wikipedia for the 5/6/11-year gaps, which that article does not state. It also compared against a stale local `origin/main` and reviewed Proposition VIII again; fetched before the second critic. Improved once:
+  - the index now counts distinct squares and says so;
+  - small avalanches on the pile are ringed, and the ant's ring is thicker;
+  - note 1 now says the gaps were counted by the page;
+  - Table 1 uses short dates;
+  - (c) has axis labels.
+
+  Final critic: originality 4, craft 4, accuracy 4, appeal 4. Nearest existing work: "MathChive, a daily mathematical pattern that its listing says is the same for everyone each day: https://peerlist.io/narmeshkumarsah/project/mathchive-v1. The listing returned 403, so I know it only from a search result's summary. aRtsy's daily artwork: https://ftp.fau.de/cran/web/packages/aRtsy/readme/README.html. Date-seeded course exercises, for example https://leetusman.com/dmsc_spring2025/seeding/. These use the date as a random seed. This change adds a rule with no randomness, three parts that recur on different periods, a proof and table of recurrence, and an index of plates to come. It lacks their variety: there are only three rules, and on most days the pile looks much like the day before." Weakest element: "The small panels (b) and (c) and the quiet-day pile do not read at a glance on the first screen. Three fixes would help most: Crop or enlarge the ant thumbnail so its structure shows. Drop or enlarge the "9999"/"0" labels in panel (c). On quiet days, make the coming avalanche read at a glance, for example by stating it in the caption's first words. Separately, change "one within a year" in the enunciation so it allows for 29 February." Prompt it reports: "Session type: site or new form." Shipped at the bar. After the verdict, two false statements were repaired: the enunciation now allows for 29 February, and Table 2's "Week" column is now "Weekday". No disagreement.
+- New dependencies: none.
